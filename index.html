@@ -1,245 +1,214 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>For My Ruh Albi ❤️</title>
 
 <style>
-
-* {
-    box-sizing: border-box;
-}
-
-body {
-    margin: 0;
-    min-height: 100vh;
-    font-family: Georgia, serif;
-    background: linear-gradient(135deg, #ffd6e0, #ffeef3, #ffd1dc);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    color: #5c1830;
-}
-
-/* Floating hearts */
-
-.heart {
-    position: fixed;
-    bottom: -30px;
-    font-size: 22px;
-    animation: floatHeart 7s linear infinite;
-    opacity: 0.7;
-    pointer-events: none;
-}
-
-@keyframes floatHeart {
-
-    0% {
-        transform: translateY(0) rotate(0deg);
-        opacity: 0;
+    * {
+        box-sizing: border-box;
     }
 
-    20% {
-        opacity: 0.8;
+    body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: Georgia, "Times New Roman", serif;
+        background: linear-gradient(135deg, #ffe6ee, #fff5f8, #ffd6e0);
+        color: #5c1830;
+        overflow-x: hidden;
     }
 
-    100% {
-        transform: translateY(-110vh) rotate(360deg);
-        opacity: 0;
-    }
-
-}
-
-/* Card */
-
-.card {
-    width: 90%;
-    max-width: 550px;
-    max-height: 90vh;
-    overflow-y: auto;
-    background: rgba(255,255,255,0.95);
-    border-radius: 30px;
-    padding: 35px 25px;
-    text-align: center;
-    box-shadow: 0 15px 40px rgba(150,30,70,0.25);
-    animation: fadeIn 0.8s ease;
-}
-
-@keyframes fadeIn {
-
-    from {
-        opacity: 0;
-        transform: scale(0.9);
-    }
-
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-
-}
-
-/* Headings */
-
-h1 {
-    color: #c9184a;
-    font-size: 38px;
-}
-
-h2 {
-    color: #c9184a;
-    font-size: 30px;
-}
-
-p {
-    font-size: 19px;
-    line-height: 1.7;
-}
-
-/* Buttons */
-
-button {
-    border: none;
-    background: #c9184a;
-    color: white;
-    padding: 13px 25px;
-    border-radius: 30px;
-    font-size: 17px;
-    cursor: pointer;
-    margin-top: 20px;
-    box-shadow: 0 5px 15px rgba(201,24,74,0.3);
-}
-
-button:hover {
-    transform: scale(1.05);
-}
-
-/* Music button */
-
-.musicButton {
-    background: #ff477e;
-    font-size: 19px;
-    padding: 15px 32px;
-}
-
-/* Photos */
-
-.photo {
-    width: 100%;
-    max-width: 430px;
-    max-height: 55vh;
-    object-fit: contain;
-    border-radius: 22px;
-    margin-top: 15px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-}
-
-/* Password */
-
-input {
-    padding: 14px;
-    width: 85%;
-    border: 2px solid #ff8fab;
-    border-radius: 25px;
-    outline: none;
-    text-align: center;
-    font-size: 17px;
-    margin-top: 15px;
-}
-
-/* Kiss */
-
-.kiss {
-    font-size: 70px;
-    animation: kissAnimation 1.5s infinite alternate;
-}
-
-@keyframes kissAnimation {
-
-    from {
-        transform: scale(1);
-    }
-
-    to {
-        transform: scale(1.25) rotate(-5deg);
-    }
-
-}
-
-/* Secret text */
-
-.secret {
-    color: #c9184a;
-    font-size: 22px;
-    font-style: italic;
-}
-
-/* Mobile */
-
-@media(max-width:500px) {
-
-    h1 {
-        font-size: 30px;
-    }
-
-    h2 {
-        font-size: 25px;
-    }
-
-    p {
-        font-size: 17px;
+    .page {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 25px;
+        text-align: center;
     }
 
     .card {
-        padding: 28px 18px;
+        width: 100%;
+        max-width: 650px;
+        background: rgba(255,255,255,0.94);
+        padding: 35px 25px;
+        border-radius: 30px;
+        box-shadow: 0 10px 35px rgba(150, 30, 70, 0.18);
+        animation: fadeIn 1s ease;
     }
 
-}
+    h1 {
+        color: #c9184a;
+        font-size: 42px;
+        margin-bottom: 15px;
+    }
 
+    h2 {
+        color: #c9184a;
+        font-size: 30px;
+        margin-bottom: 18px;
+    }
+
+    p {
+        font-size: 19px;
+        line-height: 1.7;
+    }
+
+    .small {
+        font-size: 16px;
+        color: #8a4a5c;
+    }
+
+    button {
+        margin-top: 22px;
+        padding: 14px 28px;
+        border: none;
+        border-radius: 30px;
+        background: #c9184a;
+        color: white;
+        font-size: 17px;
+        cursor: pointer;
+        box-shadow: 0 5px 15px rgba(201,24,74,0.25);
+    }
+
+    button:hover {
+        background: #a9143e;
+        transform: scale(1.03);
+    }
+
+    input {
+        width: 90%;
+        max-width: 300px;
+        padding: 14px;
+        border: 2px solid #f3a6b9;
+        border-radius: 25px;
+        text-align: center;
+        font-size: 17px;
+        outline: none;
+    }
+
+    .error {
+        color: #c9184a;
+        margin-top: 10px;
+        display: none;
+    }
+
+    img {
+        width: 100%;
+        max-width: 480px;
+        max-height: 500px;
+        object-fit: cover;
+        border-radius: 22px;
+        margin: 15px auto;
+        display: block;
+        box-shadow: 0 8px 25px rgba(100,20,50,0.2);
+    }
+
+    .heart {
+        position: fixed;
+        bottom: -30px;
+        font-size: 24px;
+        animation: floatUp 5s linear forwards;
+        pointer-events: none;
+        z-index: 1000;
+    }
+
+    .kiss {
+        position: fixed;
+        font-size: 35px;
+        pointer-events: none;
+        animation: kissFloat 2.5s ease-out forwards;
+        z-index: 1001;
+    }
+
+    .audio-area {
+        margin: 25px 0;
+    }
+
+    .song-button {
+        font-size: 20px;
+        padding: 16px 35px;
+        background: #c9184a;
+    }
+
+    .song-button.playing {
+        background: #8f1237;
+    }
+
+    .signature {
+        font-size: 24px;
+        color: #c9184a;
+        margin-top: 25px;
+        font-style: italic;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(15px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes floatUp {
+        0% {
+            transform: translateY(0) rotate(0deg);
+            opacity: 1;
+        }
+
+        100% {
+            transform: translateY(-110vh) rotate(30deg);
+            opacity: 0;
+        }
+    }
+
+    @keyframes kissFloat {
+        0% {
+            transform: translate(-50%, 0) scale(0.5);
+            opacity: 0;
+        }
+
+        20% {
+            opacity: 1;
+            transform: translate(-50%, -20px) scale(1);
+        }
+
+        100% {
+            transform: translate(-50%, -180px) scale(1.5);
+            opacity: 0;
+        }
+    }
 </style>
-
 </head>
-
 
 <body>
 
-
-<!-- FLOATING HEARTS -->
-
-<div class="heart" style="left:10%; animation-delay:0s;">❤️</div>
-<div class="heart" style="left:25%; animation-delay:2s;">💕</div>
-<div class="heart" style="left:40%; animation-delay:4s;">💗</div>
-<div class="heart" style="left:60%; animation-delay:1s;">❤️</div>
-<div class="heart" style="left:75%; animation-delay:3s;">💖</div>
-<div class="heart" style="left:90%; animation-delay:5s;">💕</div>
-
-
-<!-- PASSWORD SCREEN -->
-
-<div class="page">
-
+<!-- PASSWORD PAGE -->
+<div class="page" id="passwordPage">
     <div class="card">
+        <div style="font-size:65px;">🔐❤️</div>
 
-        <h1>For My Ruh Albi ❤️</h1>
+        <h1>For My Ruh Albi</h1>
 
         <p>
-            I made something little for you... 🥹❤️
+            A little surprise made only for you...
+            🥹❤️
         </p>
 
-        <p>
-            But first... you need the secret date. 🔐
+        <p class="small">
+            Enter the date that changed our story.
         </p>
 
         <input
             type="password"
             id="password"
-            placeholder="Enter the secret date">
+            placeholder="DDMMYYYY"
+        >
 
         <br>
 
@@ -247,48 +216,43 @@ input {
             Open My Heart ❤️
         </button>
 
-        <p id="wrongPassword"
-           style="display:none; color:#c9184a;">
-            Hmm... that's not our date 😭❤️
+        <p class="error" id="error">
+            Hmm... that's not it, my love 🥺❤️
         </p>
-
     </div>
-
 </div>
 
 
 <!-- PAGE 1 -->
-
 <div class="page" style="display:none;">
-
     <div class="card">
 
-        <h1>Happy Birthday 🎂❤️</h1>
+        <div style="font-size:60px;">🎂❤️</div>
 
-        <h2>My Ruh Albi 🥹</h2>
+        <h1>Happy Birthday</h1>
+
+        <h2>My Ruh Albi ❤️</h2>
 
         <p>
-            This little surprise is for the person
-            who became such a beautiful part of my life.
+            Today isn't just your birthday...
+            it's a reminder that you exist in my life.
+            🥹❤️
         </p>
 
         <p>
-            Ready to go through our story? ❤️
+            And somehow, life brought us here.
         </p>
 
         <button onclick="nextPage()">
-            Start Our Story 💕
+            Start Our Story ❤️
         </button>
 
     </div>
-
 </div>
 
 
 <!-- PAGE 2 -->
-
 <div class="page" style="display:none;">
-
     <div class="card">
 
         <h2>Where It Started ⛪❤️</h2>
@@ -298,26 +262,26 @@ input {
         </p>
 
         <p>
-            We weren't very close back then...
-            little did we know what life had planned for us. 🥹
+            Nothing extraordinary...
+            just two people who happened to know each other.
         </p>
 
-        <button onclick="nextPage()">
-            Next ❤️
-        </button>
+        <p>
+            Little did we know what life had planned for us.
+            🥹
+        </p>
+
+        <button onclick="nextPage()">Next ❤️</button>
 
     </div>
-
 </div>
 
 
 <!-- PAGE 3 -->
-
 <div class="page" style="display:none;">
-
     <div class="card">
 
-        <h2>8G → 10G 📚❤️</h2>
+        <h2>8G → 10G 🏫❤️</h2>
 
         <p>
             We studied in the same school,
@@ -326,153 +290,144 @@ input {
         </p>
 
         <p>
-            We were simply classmates and friends...
-            without knowing how important we would
-            become to each other one day. ❤️
+            We were there in the same place,
+            living our own little lives...
         </p>
 
-        <button onclick="nextPage()">
-            Next 💕
-        </button>
+        <p>
+            without knowing how important we would
+            become to each other someday.
+        </p>
+
+        <button onclick="nextPage()">Next ❤️</button>
 
     </div>
-
 </div>
 
 
 <!-- PAGE 4 -->
-
 <div class="page" style="display:none;">
-
     <div class="card">
 
         <h2>Four Years Apart 🥺</h2>
 
         <p>
-            After school, life took us in different directions.
+            And then life happened.
         </p>
 
         <p>
-            We didn't meet for almost four years.
+            We didn't meet for four whole years.
         </p>
 
         <p>
-            And then...
-            life decided to bring us back together. ❤️
+            Four years passed...
+            and somehow our story wasn't over.
         </p>
 
-        <button onclick="nextPage()">
-            Continue ❤️
-        </button>
+        <button onclick="nextPage()">Keep Going ❤️</button>
 
     </div>
-
 </div>
 
 
 <!-- PAGE 5 -->
-
 <div class="page" style="display:none;">
-
     <div class="card">
 
         <h2>30 April 2025 ❤️</h2>
 
-        <h1>30.04.2025</h1>
-
         <p>
-            The day we met again.
+            Then came
+            <strong>30 April 2025.</strong>
         </p>
 
         <p>
-            And somewhere on that day...
-            you started having feelings for me. 🥹❤️
+            The day I met you again.
         </p>
 
         <p>
-            I still can't believe how one ordinary day
-            became such an important date in our story.
+            And that day...
+            you got feelings for me. 🥹❤️
         </p>
 
-        <button onclick="nextPage()">
-            Next 💗
-        </button>
+        <p>
+            Maybe it was just another day for the world.
+            But for us, it became a beginning.
+        </p>
+
+        <button onclick="nextPage()">Next ❤️</button>
 
     </div>
-
 </div>
 
 
 <!-- PAGE 6 -->
-
 <div class="page" style="display:none;">
-
     <div class="card">
 
-        <h2>We Became Close 🥹❤️</h2>
+        <h2>We Became Close 🫶🏻</h2>
 
         <p>
-            We started sharing our family stories,
-            our problems, our dreams...
+            We started sharing our family stories.
         </p>
 
         <p>
-            Slowly, conversations became memories.
+            Little by little,
+            we started understanding each other.
         </p>
 
         <p>
-            And somehow...
-            you became my person. ❤️
+            We weren't just talking anymore...
+            we were becoming a part of each other's lives.
         </p>
 
-        <button onclick="nextPage()">
-            Next 💕
-        </button>
+        <button onclick="nextPage()">Next ❤️</button>
 
     </div>
-
 </div>
 
 
 <!-- PAGE 7 -->
-
 <div class="page" style="display:none;">
-
     <div class="card">
 
-        <h2>We Fought For Us ❤️‍🩹</h2>
+        <h2>We Fought For Us 🥺❤️</h2>
 
         <p>
             We fought a lot.
         </p>
 
         <p>
-            Almost one whole year...
-            there were arguments, misunderstandings,
-            tears and difficult days.
+            Nearly one whole year...
+            we fought for our love.
         </p>
 
         <p>
-            But somehow,
+            There were arguments.
+            There were difficult days.
+            There were moments when things weren't easy.
+        </p>
+
+        <p>
+            But somehow...
             we kept finding our way back to each other.
         </p>
 
-        <button onclick="nextPage()">
-            Continue ❤️
-        </button>
+        <button onclick="nextPage()">Next ❤️</button>
 
     </div>
-
 </div>
 
 
 <!-- PAGE 8 -->
-
 <div class="page" style="display:none;">
-
     <div class="card">
 
-        <h2>You Believe In Me 🥹❤️</h2>
+        <h2>You Believe In Me ✨❤️</h2>
+
+        <p>
+            One thing I'll always be grateful for...
+        </p>
 
         <p>
             You encourage me to do things.
@@ -483,204 +438,162 @@ input {
         </p>
 
         <p>
-            And sometimes,
-            when I forget my own spark and talent,
-            you remind me that it's still there. ✨
+            You make me believe that I have
+            <strong>spark and talent</strong>
+            even when I forget it myself.
         </p>
 
         <p>
-            Thank you for believing in me. ❤️
+            Thank you for seeing something in me
+            that I sometimes fail to see.
         </p>
 
-        <button onclick="nextPage()">
-            Next 💗
-        </button>
+        <button onclick="nextPage()">Next ❤️</button>
 
     </div>
-
 </div>
 
 
 <!-- PAGE 9 -->
-
 <div class="page" style="display:none;">
-
     <div class="card">
 
-        <h2>Listen To Me... ❤️</h2>
+        <h2>And About You... ❤️</h2>
 
         <p>
-            I know you have so much to go through in life.
+            I know you have a lot to go through in life.
         </p>
 
         <p>
-            You have responsibilities,
-            worries and your own battles.
+            You have responsibilities.
+            You have your own battles.
+            You have things you don't always say.
         </p>
 
-        <p class="secret">
-            But remember one thing...
+        <p style="font-size:27px;color:#c9184a;font-weight:bold;">
+            But remember...
         </p>
 
-        <h2>
-            You are never alone,
-            miii love. ❤️
-        </h2>
+        <p style="font-size:27px;color:#c9184a;">
+            You are never alone, miii love. ❤️
+        </p>
 
-        <button onclick="nextPage()">
-            Next 🥹
-        </button>
+        <button onclick="nextPage()">Next ❤️</button>
 
     </div>
-
 </div>
 
 
 <!-- PHOTO 1 -->
-
 <div class="page" style="display:none;">
-
     <div class="card">
 
-        <h2>My Favourite Person ❤️</h2>
+        <h2>My Ruh Albi ❤️</h2>
 
-        <img
-            src="ruh%20albi.jpeg"
-            class="photo"
-            alt="Ruh Albi">
+        <img src="ruh%20albi.jpeg" alt="My Ruh Albi">
 
         <p>
-            My Ruh Albi. 🥹❤️
+            My favourite person. 🥹❤️
         </p>
 
-        <button onclick="nextPage()">
-            Next 💕
-        </button>
+        <button onclick="nextPage()">Next ❤️</button>
 
     </div>
-
 </div>
 
 
 <!-- PHOTO 2 -->
-
 <div class="page" style="display:none;">
-
     <div class="card">
 
-        <h2>One Of My Favourite Memories ❤️</h2>
+        <h2>A Little Memory ❤️</h2>
 
-        <img
-            src="august%209.jpeg"
-            class="photo"
-            alt="August 9">
+        <img src="august%209.jpeg" alt="Our Memory">
 
         <p>
-            Every picture has a little piece of us. ❤️
+            Every memory with you means something to me.
         </p>
 
-        <button onclick="nextPage()">
-            Next 💗
-        </button>
+        <button onclick="nextPage()">Next ❤️</button>
 
     </div>
-
 </div>
 
 
 <!-- PHOTO 3 -->
-
 <div class="page" style="display:none;">
-
     <div class="card">
 
-        <h2>Our Story ❤️</h2>
+        <h2>The Day It Began ❤️</h2>
 
-        <img
-            src="April%2030.jpeg"
-            class="photo"
-            alt="April 30">
+        <img src="April%2030.jpeg" alt="April 30">
 
         <p>
             30 April 2025...
-            the day our story changed. 🥹
+            a date I'll always remember.
         </p>
 
-        <button onclick="nextPage()">
-            Next 💕
-        </button>
+        <button onclick="nextPage()">Next ❤️</button>
 
     </div>
-
 </div>
 
 
 <!-- PHOTO 4 -->
-
 <div class="page" style="display:none;">
-
     <div class="card">
 
-        <h2>And Then There Was Us ❤️</h2>
+        <h2>Us 🥹❤️</h2>
 
-        <img
-            src="oii.jpeg"
-            class="photo"
-            alt="Our Memory">
+        <img src="oii.jpeg" alt="Us">
 
         <p>
-            From old classmates...
-            to something much more beautiful. ❤️
+            Just us...
+            and all the memories still waiting for us.
         </p>
 
-        <button onclick="nextPage()">
-            Next 🎶
-        </button>
+        <button onclick="nextPage()">Next ❤️</button>
 
     </div>
-
 </div>
 
 
 <!-- SONG PAGE -->
-
 <div class="page" style="display:none;">
-
     <div class="card">
 
         <h2>Our Song 🎶❤️</h2>
 
         <p>
-            This one is for you, my love... 🥹❤️
+            Now I want you to listen to this...
         </p>
 
-        <!-- PLAY SONG BUTTON -->
-
-        <button
-            class="musicButton"
-            id="musicButton"
-            onclick="playSong()">
-
-            🎵 Play Song ❤️
-
-        </button>
-
-        <p id="songStatus" style="display:none;">
-
-            🎶 Now playing... ❤️
-
+        <p>
+            This song reminds me of us.
+            🥹❤️
         </p>
+
+        <div class="audio-area">
+
+            <button
+                class="song-button"
+                id="songButton"
+                onclick="playSong()"
+            >
+                ▶️ Play Our Song 🎶❤️
+            </button>
+
+        </div>
 
         <p style="
-            font-size:22px;
+            font-size:24px;
             color:#c9184a;
             font-style:italic;
+            line-height:1.8;
         ">
-
             Nee naan anbeeee... ❤️<br>
             Ini endhan ulagam...<br>
             Ini endhan payanam...
-
         </p>
 
         <button onclick="nextPage()">
@@ -688,165 +601,110 @@ input {
         </button>
 
     </div>
-
 </div>
 
 
+<!-- HIDDEN AUDIO -->
+<audio id="ourSong" preload="auto">
+    <source src="song.mp3" type="audio/mpeg">
+</audio>
+
+
 <!-- BIRTHDAY PAGE -->
-
 <div class="page" style="display:none;">
-
     <div class="card">
 
-        <h1>Happy Birthday, My Love 🎂❤️</h1>
+        <div style="font-size:70px;">🎂🎈❤️</div>
+
+        <h1>Happy Birthday, My Love ❤️</h1>
 
         <p>
-            Another year of your life...
-            and I'm so grateful that I get to be
-            a part of it. 🥹
+            I hope this year brings you everything
+            your heart deserves.
         </p>
 
         <p>
-            I don't know what the future will bring,
-            but I know what I want...
+            And I hope I get to be there beside you
+            through all of it.
         </p>
-
-        <h2>
-            I want to spend all your coming birthdays
-            with you. ❤️
-        </h2>
 
         <button onclick="nextPage()">
             One Last Thing... 💌
         </button>
 
     </div>
-
 </div>
 
 
 <!-- FINAL PAGE -->
-
 <div class="page" style="display:none;">
-
     <div class="card">
 
-        <div class="kiss">
-            💋❤️
+        <div style="font-size:65px;">
+            💋❤️💋
         </div>
 
-        <h1>
-            I Love You, Ruh Albi ❤️
-        </h1>
+        <h1>My Birthday Partner ❤️</h1>
 
         <p>
-            From being church friends...
-        </p>
-
-        <p>
-            To classmates...
+            I want to spend all your coming birthdays
+            with u.
         </p>
 
         <p>
-            To four years apart...
+            Not just this birthday...
+            but every birthday that comes after this.
         </p>
 
         <p>
-            To finding each other again...
+            Through the happy days,
+            difficult days,
+            silly fights,
+            laughter,
+            dreams,
+            and everything in between...
         </p>
 
-        <p>
-            To fighting for our love...
+        <p class="signature">
+            I choose you, Ruh Albi. ❤️
         </p>
 
-        <h2>
-            Somehow, it became YOU. ❤️
-        </h2>
-
-        <p class="secret">
-
-            Nee naan anbeeee...<br>
-            Ini endhan ulagam...<br>
-            Ini endhan payanam... ❤️
-
+        <p style="font-size:27px;">
+            Happy Birthday, my love. 🥹❤️
         </p>
 
-        <h2>
-            Happy Birthday, my birthday partner. 🎂❤️
-        </h2>
-
-        <p>
-            Always remember...
+        <p style="font-size:22px;">
+            Forever your Ruh Hayathi ❤️
         </p>
 
-        <h2>
-            You are never alone miii love. ❤️
-        </h2>
-
-        <div class="kiss">
+        <div style="font-size:55px;margin-top:20px;">
             💋💋💋
         </div>
 
     </div>
-
 </div>
 
 
-<!-- YOUR SONG -->
-
-<audio id="ourSong" preload="auto">
-
-    <source src="song.mp3" type="audio/mpeg">
-
-</audio>
-
-
 <script>
-
-/* =========================
-   PAGE SYSTEM
-========================= */
 
 let currentPage = 0;
 
 const pages = document.querySelectorAll(".page");
 
+function showPage(number) {
 
-function showPage(index) {
-
-    pages.forEach((page, i) => {
-
-        if (i === index) {
-            page.style.display = "block";
-        } else {
-            page.style.display = "none";
-        }
-
+    pages.forEach(function(page) {
+        page.style.display = "none";
     });
 
+    pages[number].style.display = "flex";
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
 }
 
-
-/* =========================
-   NEXT PAGE
-========================= */
-
-function nextPage() {
-
-    if (currentPage < pages.length - 1) {
-
-        currentPage++;
-
-        showPage(currentPage);
-
-    }
-
-}
-
-
-/* =========================
-   PASSWORD
-========================= */
 
 function checkPassword() {
 
@@ -859,31 +717,38 @@ function checkPassword() {
 
         showPage(currentPage);
 
+        createHearts();
+
     } else {
 
-        document.getElementById("wrongPassword")
-            .style.display = "block";
+        document.getElementById("error").style.display = "block";
 
     }
-
 }
 
 
-/* =========================
-   PLAY / PAUSE SONG
-========================= */
+function nextPage() {
+
+    if (currentPage < pages.length - 1) {
+
+        currentPage++;
+
+        showPage(currentPage);
+
+        createHearts();
+
+        createKisses();
+    }
+}
+
+
+/* PLAY SONG */
 
 function playSong() {
 
-    const song =
-        document.getElementById("ourSong");
+    const song = document.getElementById("ourSong");
 
-    const button =
-        document.getElementById("musicButton");
-
-    const status =
-        document.getElementById("songStatus");
-
+    const button = document.getElementById("songButton");
 
     if (song.paused) {
 
@@ -891,19 +756,21 @@ function playSong() {
         .then(function() {
 
             button.innerHTML =
-                "⏸️ Pause Song ❤️";
+                "⏸️ Pause Our Song ❤️";
 
-            status.style.display =
-                "block";
+            button.classList.add("playing");
+
+            createHearts();
+            createKisses();
 
         })
         .catch(function(error) {
 
-            console.log(error);
-
             alert(
-                "The song could not be played. Please check that song.mp3 is in the same GitHub folder as index.html ❤️"
+                "The song could not start. Please refresh the page and try again ❤️"
             );
+
+            console.log(error);
 
         });
 
@@ -912,26 +779,100 @@ function playSong() {
         song.pause();
 
         button.innerHTML =
-            "🎵 Play Song ❤️";
+            "▶️ Play Our Song 🎶❤️";
 
-        status.style.display =
-            "none";
-
+        button.classList.remove("playing");
     }
-
 }
 
 
-/* =========================
-   START WEBSITE
-========================= */
+/* WHEN SONG ENDS */
 
-showPage(0);
+document.getElementById("ourSong").addEventListener(
+    "ended",
+    function() {
+
+        const button =
+            document.getElementById("songButton");
+
+        button.innerHTML =
+            "▶️ Play Our Song 🎶❤️";
+
+        button.classList.remove("playing");
+
+    }
+);
+
+
+/* HEART ANIMATION */
+
+function createHearts() {
+
+    for (let i = 0; i < 8; i++) {
+
+        const heart = document.createElement("div");
+
+        heart.className = "heart";
+
+        heart.innerHTML =
+            Math.random() > 0.5 ? "❤️" : "💕";
+
+        heart.style.left =
+            Math.random() * 100 + "vw";
+
+        heart.style.animationDuration =
+            (3 + Math.random() * 3) + "s";
+
+        document.body.appendChild(heart);
+
+        setTimeout(function() {
+            heart.remove();
+        }, 6000);
+    }
+}
+
+
+/* KISS ANIMATION */
+
+function createKisses() {
+
+    for (let i = 0; i < 3; i++) {
+
+        const kiss = document.createElement("div");
+
+        kiss.className = "kiss";
+
+        kiss.innerHTML = "💋";
+
+        kiss.style.left =
+            (20 + Math.random() * 60) + "vw";
+
+        kiss.style.bottom =
+            (20 + Math.random() * 20) + "vh";
+
+        document.body.appendChild(kiss);
+
+        setTimeout(function() {
+            kiss.remove();
+        }, 3000);
+    }
+}
+
+
+/* ENTER KEY FOR PASSWORD */
+
+document.getElementById("password").addEventListener(
+    "keydown",
+    function(event) {
+
+        if (event.key === "Enter") {
+            checkPassword();
+        }
+
+    }
+);
 
 </script>
 
-
 </body>
-
 </html>
-```
