@@ -56,14 +56,14 @@ body {
 
 }
 
-/* Main card */
+/* Card */
 
 .card {
     width: 90%;
     max-width: 550px;
     max-height: 90vh;
     overflow-y: auto;
-    background: rgba(255,255,255,0.94);
+    background: rgba(255,255,255,0.95);
     border-radius: 30px;
     padding: 35px 25px;
     text-align: center;
@@ -97,10 +97,6 @@ h2 {
     font-size: 30px;
 }
 
-h3 {
-    color: #a4133c;
-}
-
 p {
     font-size: 19px;
     line-height: 1.7;
@@ -122,6 +118,14 @@ button {
 
 button:hover {
     transform: scale(1.05);
+}
+
+/* Music button */
+
+.musicButton {
+    background: #ff477e;
+    font-size: 19px;
+    padding: 15px 32px;
 }
 
 /* Photos */
@@ -149,19 +153,6 @@ input {
     margin-top: 15px;
 }
 
-/* Song button */
-
-.musicButton {
-    background: #ff477e;
-    font-size: 18px;
-    padding: 15px 30px;
-}
-
-#songStatus {
-    color: #c9184a;
-    font-weight: bold;
-}
-
 /* Kiss */
 
 .kiss {
@@ -181,7 +172,7 @@ input {
 
 }
 
-/* Secret message */
+/* Secret text */
 
 .secret {
     color: #c9184a;
@@ -231,7 +222,7 @@ input {
 
 <!-- PASSWORD SCREEN -->
 
-<div class="page" id="passwordPage">
+<div class="page">
 
     <div class="card">
 
@@ -651,7 +642,7 @@ input {
 </div>
 
 
-<!-- SONG SCREEN -->
+<!-- SONG PAGE -->
 
 <div class="page" style="display:none;">
 
@@ -663,10 +654,12 @@ input {
             This one is for you, my love... 🥹❤️
         </p>
 
+        <!-- PLAY SONG BUTTON -->
+
         <button
             class="musicButton"
-            onclick="playSong()"
-            id="musicButton">
+            id="musicButton"
+            onclick="playSong()">
 
             🎵 Play Song ❤️
 
@@ -674,7 +667,7 @@ input {
 
         <p id="songStatus" style="display:none;">
 
-            Now playing... 🎶❤️
+            🎶 Now playing... ❤️
 
         </p>
 
@@ -799,21 +792,20 @@ input {
 </div>
 
 
-<!-- SONG FILE -->
+<!-- YOUR SONG -->
 
-<audio id="ourSong" loop>
+<audio id="ourSong" preload="auto">
 
-    <source
-        src="_Neethan_Anbe_Mass_Ringtone_(by%20Fringster.com).mp3"
-        type="audio/mpeg">
+    <source src="song.mp3" type="audio/mpeg">
 
 </audio>
 
 
 <script>
 
-
-/* PAGE SYSTEM */
+/* =========================
+   PAGE SYSTEM
+========================= */
 
 let currentPage = 0;
 
@@ -824,13 +816,20 @@ function showPage(index) {
 
     pages.forEach((page, i) => {
 
-        page.style.display =
-            i === index ? "block" : "none";
+        if (i === index) {
+            page.style.display = "block";
+        } else {
+            page.style.display = "none";
+        }
 
     });
 
 }
 
+
+/* =========================
+   NEXT PAGE
+========================= */
 
 function nextPage() {
 
@@ -845,7 +844,9 @@ function nextPage() {
 }
 
 
-/* PASSWORD */
+/* =========================
+   PASSWORD
+========================= */
 
 function checkPassword() {
 
@@ -868,7 +869,9 @@ function checkPassword() {
 }
 
 
-/* SONG */
+/* =========================
+   PLAY / PAUSE SONG
+========================= */
 
 function playSong() {
 
@@ -885,7 +888,7 @@ function playSong() {
     if (song.paused) {
 
         song.play()
-        .then(() => {
+        .then(function() {
 
             button.innerHTML =
                 "⏸️ Pause Song ❤️";
@@ -894,10 +897,12 @@ function playSong() {
                 "block";
 
         })
-        .catch(() => {
+        .catch(function(error) {
+
+            console.log(error);
 
             alert(
-                "Please tap the Play Song button again ❤️"
+                "The song could not be played. Please check that song.mp3 is in the same GitHub folder as index.html ❤️"
             );
 
         });
@@ -917,10 +922,11 @@ function playSong() {
 }
 
 
-/* START */
+/* =========================
+   START WEBSITE
+========================= */
 
 showPage(0);
-
 
 </script>
 
