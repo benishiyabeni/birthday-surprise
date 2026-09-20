@@ -3,297 +3,322 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>For My Ruh Albi ❤️</title>
 
 <style>
-    * {
-        box-sizing: border-box;
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Georgia", serif;
+    background: linear-gradient(135deg, #fff0f3, #ffe4e9, #fff7f8);
+    color: #5a1a25;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+.page {
+    min-height: 100vh;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.page.active {
+    display: flex;
+}
+
+.card {
+    width: min(700px, 95%);
+    background: rgba(255,255,255,0.88);
+    padding: 40px 25px;
+    border-radius: 30px;
+    box-shadow: 0 15px 45px rgba(130, 20, 40, 0.18);
+    position: relative;
+    z-index: 2;
+}
+
+h1 {
+    color: #a3132c;
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+h2 {
+    color: #a3132c;
+    font-size: 30px;
+}
+
+p {
+    font-size: 19px;
+    line-height: 1.8;
+}
+
+button {
+    border: none;
+    padding: 14px 28px;
+    border-radius: 30px;
+    background: #a3132c;
+    color: white;
+    font-size: 17px;
+    cursor: pointer;
+    margin-top: 20px;
+    box-shadow: 0 7px 18px rgba(163,19,44,0.25);
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+input {
+    width: 85%;
+    max-width: 320px;
+    padding: 15px;
+    border-radius: 25px;
+    border: 2px solid #d98a99;
+    text-align: center;
+    font-size: 18px;
+    outline: none;
+}
+
+.error {
+    color: #b00020;
+    margin-top: 12px;
+}
+
+/* ROSE BOUQUET */
+
+.bouquet-area {
+    margin: 10px auto 25px;
+    width: 320px;
+    height: 350px;
+    position: relative;
+}
+
+.roses {
+    position: absolute;
+    width: 100%;
+    height: 250px;
+    top: 5px;
+}
+
+.rose {
+    position: absolute;
+    font-size: 55px;
+    filter: drop-shadow(0 5px 5px rgba(100,0,0,0.25));
+    animation: roseFloat 3s ease-in-out infinite;
+}
+
+.rose:nth-child(1) { left: 125px; top: 0; font-size: 65px; }
+.rose:nth-child(2) { left: 70px; top: 35px; }
+.rose:nth-child(3) { left: 175px; top: 35px; }
+.rose:nth-child(4) { left: 25px; top: 85px; }
+.rose:nth-child(5) { left: 120px; top: 70px; font-size: 62px; }
+.rose:nth-child(6) { left: 220px; top: 90px; }
+.rose:nth-child(7) { left: 75px; top: 120px; }
+.rose:nth-child(8) { left: 165px; top: 125px; }
+
+.leaf {
+    position: absolute;
+    font-size: 42px;
+    z-index: 1;
+}
+
+.leaf.l1 { left: 30px; top: 145px; transform: rotate(-30deg); }
+.leaf.l2 { right: 20px; top: 150px; transform: rotate(30deg); }
+.leaf.l3 { left: 80px; top: 175px; transform: rotate(-15deg); }
+.leaf.l4 { right: 70px; top: 175px; transform: rotate(15deg); }
+
+.wrapping {
+    position: absolute;
+    left: 48px;
+    bottom: 10px;
+    width: 225px;
+    height: 145px;
+    background: linear-gradient(145deg, #f5d5dc, #fff3f5);
+    clip-path: polygon(10% 0%, 90% 0%, 100% 100%, 50% 82%, 0% 100%);
+    transform: rotate(2deg);
+    box-shadow: 0 8px 15px rgba(80,0,20,0.15);
+}
+
+.ribbon {
+    position: absolute;
+    bottom: 55px;
+    left: 135px;
+    width: 50px;
+    height: 18px;
+    background: #a3132c;
+    border-radius: 50%;
+    z-index: 5;
+}
+
+.ribbon:before,
+.ribbon:after {
+    content: "";
+    position: absolute;
+    width: 55px;
+    height: 45px;
+    border: 5px solid #a3132c;
+    top: -15px;
+}
+
+.ribbon:before {
+    right: 30px;
+    border-radius: 50% 10% 50% 50%;
+    transform: rotate(20deg);
+}
+
+.ribbon:after {
+    left: 30px;
+    border-radius: 10% 50% 50% 50%;
+    transform: rotate(-20deg);
+}
+
+@keyframes roseFloat {
+    0%,100% {
+        transform: translateY(0) rotate(0deg);
     }
-
-    body {
-        margin: 0;
-        min-height: 100vh;
-        font-family: Georgia, "Times New Roman", serif;
-        background: linear-gradient(135deg, #ffe6ee, #fff5f8, #ffd6e0);
-        color: #5c1830;
-        overflow-x: hidden;
+    50% {
+        transform: translateY(-7px) rotate(2deg);
     }
+}
 
-    .page {
-        min-height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 25px;
-        text-align: center;
+/* PHOTOS */
+
+.photo {
+    width: 90%;
+    max-width: 500px;
+    max-height: 480px;
+    object-fit: contain;
+    border-radius: 25px;
+    margin: 20px auto;
+    display: block;
+    box-shadow: 0 12px 30px rgba(100,0,30,0.2);
+}
+
+/* SONG */
+
+.song-icon {
+    font-size: 70px;
+}
+
+.playing {
+    animation: pulse 1.2s infinite;
+}
+
+@keyframes pulse {
+    50% {
+        transform: scale(1.08);
     }
+}
 
-    .card {
-        width: 100%;
-        max-width: 650px;
-        background: rgba(255,255,255,0.95);
-        padding: 38px 25px;
-        border-radius: 30px;
-        box-shadow: 0 10px 35px rgba(150, 30, 70, 0.18);
-        animation: fadeIn 1s ease;
+/* HEARTS + KISSES */
+
+.heart,
+.kiss {
+    position: fixed;
+    pointer-events: none;
+    z-index: 10;
+    animation: floatUp 4s linear forwards;
+}
+
+.heart {
+    font-size: 25px;
+}
+
+.kiss {
+    font-size: 30px;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
     }
-
-    h1 {
-        color: #c9184a;
-        font-size: 42px;
-        margin-bottom: 15px;
+    100% {
+        transform: translateY(-100vh) scale(1.6);
+        opacity: 0;
     }
+}
 
-    h2 {
-        color: #c9184a;
-        font-size: 30px;
-        margin-bottom: 18px;
-    }
-
-    p {
-        font-size: 19px;
-        line-height: 1.7;
-    }
-
-    .small {
-        font-size: 16px;
-        color: #8a4a5c;
-    }
-
-    button {
-        margin-top: 22px;
-        padding: 14px 28px;
-        border: none;
-        border-radius: 30px;
-        background: #c9184a;
-        color: white;
-        font-size: 17px;
-        cursor: pointer;
-        box-shadow: 0 5px 15px rgba(201,24,74,0.25);
-        transition: 0.3s;
-    }
-
-    button:hover {
-        background: #a9143e;
-        transform: scale(1.05);
-    }
-
-    input {
-        width: 90%;
-        max-width: 300px;
-        padding: 14px;
-        border: 2px solid #f3a6b9;
-        border-radius: 25px;
-        text-align: center;
-        font-size: 17px;
-        outline: none;
-    }
-
-    .error {
-        color: #c9184a;
-        margin-top: 10px;
-        display: none;
-    }
-
-    img {
-        width: 100%;
-        max-width: 480px;
-        max-height: 500px;
-        object-fit: cover;
-        border-radius: 22px;
-        margin: 15px auto;
-        display: block;
-        box-shadow: 0 8px 25px rgba(100,20,50,0.2);
-    }
-
-    .heart {
-        position: fixed;
-        bottom: -30px;
-        font-size: 24px;
-        animation: floatUp 5s linear forwards;
-        pointer-events: none;
-        z-index: 1000;
-    }
-
-    .kiss {
-        position: fixed;
-        font-size: 35px;
-        pointer-events: none;
-        animation: kissFloat 2.5s ease-out forwards;
-        z-index: 1001;
-    }
-
-    .rose {
-        font-size: 85px;
-        margin: 10px 0;
-        animation: roseAppear 2s ease;
-    }
-
-    .rose-small {
-        font-size: 32px;
-        letter-spacing: 5px;
-        margin: 15px 0;
-    }
-
-    .love-note {
-        font-size: 23px;
-        color: #c9184a;
-        font-style: italic;
-        line-height: 1.7;
-    }
-
-    .audio-area {
-        margin: 25px 0;
-    }
-
-    .song-button {
-        font-size: 20px;
-        padding: 16px 35px;
-        background: #c9184a;
-    }
-
-    .song-button.playing {
-        background: #8f1237;
-    }
-
-    .signature {
-        font-size: 24px;
-        color: #c9184a;
-        margin-top: 25px;
-        font-style: italic;
-    }
-
-    .final-love {
-        font-size: 25px;
-        color: #c9184a;
-        line-height: 1.8;
-    }
-
-    @keyframes fadeIn {
-        from {
-            opacity: 0;
-            transform: translateY(15px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    @keyframes floatUp {
-        0% {
-            transform: translateY(0) rotate(0deg);
-            opacity: 1;
-        }
-
-        100% {
-            transform: translateY(-110vh) rotate(30deg);
-            opacity: 0;
-        }
-    }
-
-    @keyframes kissFloat {
-        0% {
-            transform: translate(-50%, 0) scale(0.5);
-            opacity: 0;
-        }
-
-        20% {
-            opacity: 1;
-            transform: translate(-50%, -20px) scale(1);
-        }
-
-        100% {
-            transform: translate(-50%, -180px) scale(1.5);
-            opacity: 0;
-        }
-    }
-
-    @keyframes roseAppear {
-        0% {
-            opacity: 0;
-            transform: scale(0.4) rotate(-10deg);
-        }
-
-        60% {
-            transform: scale(1.15) rotate(3deg);
-        }
-
-        100% {
-            opacity: 1;
-            transform: scale(1) rotate(0deg);
-        }
-    }
+.small {
+    font-size: 15px;
+    opacity: 0.75;
+}
 </style>
 </head>
 
 <body>
 
 <!-- PASSWORD PAGE -->
-<div class="page" id="passwordPage">
+
+<section class="page active" id="page1">
     <div class="card">
+        <div style="font-size:70px;">🔐❤️</div>
 
-        <div style="font-size:65px;">🔐❤️</div>
-
-        <h1>For My Ruh Albi</h1>
+        <h1>Something Special For You</h1>
 
         <p>
-            A little surprise made only for you...
-            🥹❤️
+            Only my Ruh Albi can open this little surprise. ❤️
         </p>
 
-        <p class="small">
-            Enter the date that changed our story.
-        </p>
-
-        <input
-            type="password"
-            id="password"
-            placeholder="DDMMYYYY"
-        >
+        <input type="password" id="password" placeholder="Enter the secret password">
 
         <br>
 
-        <button onclick="checkPassword()">
-            Open My Heart ❤️
-        </button>
+        <button onclick="checkPassword()">Open My Heart ❤️</button>
 
-        <p class="error" id="error">
-            Hmm... that's not it, my love 🥺❤️
-        </p>
-
+        <div class="error" id="error"></div>
     </div>
-</div>
+</section>
 
 
-<!-- ROSE SURPRISE -->
-<div class="page" style="display:none;">
+<!-- ROSE BOUQUET PAGE -->
+
+<section class="page" id="page2">
     <div class="card">
 
-        <div class="rose">
-            🌹🌹🌹
+        <div class="bouquet-area">
+
+            <div class="roses">
+                <div class="rose">🌹</div>
+                <div class="rose">🌹</div>
+                <div class="rose">🌹</div>
+                <div class="rose">🌹</div>
+                <div class="rose">🌹</div>
+                <div class="rose">🌹</div>
+                <div class="rose">🌹</div>
+                <div class="rose">🌹</div>
+            </div>
+
+            <div class="leaf l1">🌿</div>
+            <div class="leaf l2">🌿</div>
+            <div class="leaf l3">🍃</div>
+            <div class="leaf l4">🍃</div>
+
+            <div class="wrapping"></div>
+            <div class="ribbon"></div>
+
         </div>
 
-        <h1>A Bouquet For You ❤️</h1>
+        <h1>A Bouquet For You 🌹</h1>
 
-        <div class="rose-small">
-            🌹 🌹 🌹 🌹 🌹
-        </div>
-
-        <p class="love-note">
-            These roses are for the person<br>
-            who became so special to my heart. ❤️
+        <p>
+            Before you enter our little story...
+            <br><br>
+            I wanted to give you something first. ❤️
+            <br><br>
+            A bouquet of roses for the person
+            who has become so precious to my heart.
         </p>
 
         <p>
-            If I could hand you a bouquet right now,
-            this is the first thing I would give you.
-            🌹
-        </p>
-
-        <p>
-            Happy Birthday, my Ruh Albi. 🥹❤️
+            Every rose here carries a little piece of my love for you. 🌹
         </p>
 
         <button onclick="nextPage()">
@@ -301,27 +326,24 @@
         </button>
 
     </div>
-</div>
+</section>
 
 
-<!-- PAGE 1 -->
-<div class="page" style="display:none;">
+<!-- BIRTHDAY PAGE -->
+
+<section class="page" id="page3">
     <div class="card">
 
-        <div style="font-size:60px;">🎂❤️</div>
+        <div style="font-size:70px;">🎂❤️</div>
 
         <h1>Happy Birthday</h1>
 
         <h2>My Ruh Albi ❤️</h2>
 
         <p>
-            Today isn't just your birthday...
-            it's a reminder that you exist in my life.
-            🥹❤️
-        </p>
-
-        <p>
-            And somehow, life brought us here.
+            Today is about celebrating you...
+            but somehow, I feel lucky because
+            life gave me you.
         </p>
 
         <button onclick="nextPage()">
@@ -329,551 +351,522 @@
         </button>
 
     </div>
-</div>
+</section>
 
 
-<!-- PAGE 2 -->
-<div class="page" style="display:none;">
+<!-- CHURCH FRIENDS -->
+
+<section class="page" id="page4">
     <div class="card">
 
-        <h2>Where It Started ⛪❤️</h2>
+        <div style="font-size:55px;">⛪❤️</div>
+
+        <h2>Where It Started</h2>
 
         <p>
             We were just church friends.
-        </p>
-
-        <p>
-            Nothing extraordinary...
-            just two people who happened to know each other.
-        </p>
-
-        <p>
-            Little did we know what life had planned for us.
-            🥹
+            <br><br>
+            Nothing dramatic.
+            Nothing that made us think
+            we would become this important
+            to each other one day.
         </p>
 
         <button onclick="nextPage()">Next ❤️</button>
 
     </div>
-</div>
+</section>
 
 
-<!-- PAGE 3 -->
-<div class="page" style="display:none;">
+<!-- SCHOOL -->
+
+<section class="page" id="page5">
     <div class="card">
 
-        <h2>8G → 10G 🏫❤️</h2>
+        <div style="font-size:55px;">🏫❤️</div>
+
+        <h2>8G → 10G</h2>
 
         <p>
             We studied in the same school,
             in the same class,
             from 8G to 10G.
-        </p>
-
-        <p>
-            We were there in the same place,
-            living our own little lives...
-        </p>
-
-        <p>
-            Without knowing how important we would
-            become to each other someday.
+            <br><br>
+            We knew each other...
+            but we didn't know what life
+            had planned for us.
         </p>
 
         <button onclick="nextPage()">Next ❤️</button>
 
     </div>
-</div>
+</section>
 
 
-<!-- PAGE 4 -->
-<div class="page" style="display:none;">
+<!-- FOUR YEARS -->
+
+<section class="page" id="page6">
     <div class="card">
 
-        <h2>Four Years Apart 🥺</h2>
+        <div style="font-size:60px;">⌛❤️</div>
+
+        <h2>Four Years Apart</h2>
 
         <p>
-            And then life happened.
-        </p>
-
-        <p>
-            We didn't meet for four whole years.
-        </p>
-
-        <p>
-            Four years passed...
-            and somehow our story wasn't over.
-        </p>
-
-        <button onclick="nextPage()">Keep Going ❤️</button>
-
-    </div>
-</div>
-
-
-<!-- PAGE 5 -->
-<div class="page" style="display:none;">
-    <div class="card">
-
-        <h2>30 April 2025 ❤️</h2>
-
-        <p>
-            Then came
-            <strong>30 April 2025.</strong>
-        </p>
-
-        <p>
-            The day I met you again.
-        </p>
-
-        <p>
-            And that day...
-            you got feelings for me. 🥹❤️
-        </p>
-
-        <p>
-            Maybe it was just another day for the world.
-            But for us, it became a beginning.
+            Then life took us in different directions.
+            <br><br>
+            Four whole years passed
+            without meeting each other.
+            <br><br>
+            And then...
+            everything changed.
         </p>
 
         <button onclick="nextPage()">Next ❤️</button>
 
     </div>
-</div>
+</section>
 
 
-<!-- PAGE 6 -->
-<div class="page" style="display:none;">
+<!-- APRIL 30 -->
+
+<section class="page" id="page7">
     <div class="card">
 
-        <h2>We Became Close 🫶🏻</h2>
+        <div style="font-size:60px;">🌹❤️</div>
+
+        <h2>30 April 2025</h2>
 
         <p>
-            We started sharing our family stories.
-        </p>
-
-        <p>
-            Little by little,
-            we started understanding each other.
-        </p>
-
-        <p>
-            We weren't just talking anymore...
-            we were becoming a part of each other's lives.
+            After those four years,
+            I met you again on
+            <b>30 April 2025.</b>
+            <br><br>
+            And that day became
+            one of the most beautiful
+            turning points of my life.
+            <br><br>
+            You got feelings...
+            and slowly,
+            we became something more.
         </p>
 
         <button onclick="nextPage()">Next ❤️</button>
 
     </div>
-</div>
+</section>
 
 
-<!-- PAGE 7 -->
-<div class="page" style="display:none;">
+<!-- FAMILY STORIES -->
+
+<section class="page" id="page8">
     <div class="card">
 
-        <h2>We Fought For Us 🥺❤️</h2>
+        <div style="font-size:60px;">💬❤️</div>
+
+        <h2>Then We Became Close</h2>
 
         <p>
-            We fought a lot.
-        </p>
-
-        <p>
-            Nearly one whole year...
-            we fought for our love.
-        </p>
-
-        <p>
-            There were arguments.
-            There were difficult days.
-            There were moments when things weren't easy.
-        </p>
-
-        <p>
-            But somehow...
-            we kept finding our way back to each other.
+            We started sharing our family stories,
+            our thoughts,
+            our fears,
+            our dreams...
+            <br><br>
+            And somewhere between
+            all those conversations,
+            you became my person.
         </p>
 
         <button onclick="nextPage()">Next ❤️</button>
 
     </div>
-</div>
+</section>
 
 
-<!-- PAGE 8 -->
-<div class="page" style="display:none;">
+<!-- FIGHT FOR LOVE -->
+
+<section class="page" id="page9">
     <div class="card">
 
-        <h2>You Believe In Me ✨❤️</h2>
+        <div style="font-size:60px;">🥺❤️</div>
+
+        <h2>We Fought For Us</h2>
 
         <p>
-            One thing I'll always be grateful for...
-        </p>
-
-        <p>
-            You encourage me to do things.
-        </p>
-
-        <p>
-            You support my dreams.
-        </p>
-
-        <p>
-            You make me believe that I have
-            <strong>spark and talent</strong>
-            even when I forget it myself.
-        </p>
-
-        <p>
-            Thank you for seeing something in me
-            that I sometimes fail to see.
+            We fought so much for this love.
+            <br><br>
+            Almost one whole year
+            of emotions,
+            misunderstandings,
+            tears,
+            fights...
+            and still choosing each other.
+            <br><br>
+            Somehow,
+            our love kept finding its way back.
         </p>
 
         <button onclick="nextPage()">Next ❤️</button>
 
     </div>
-</div>
+</section>
 
 
-<!-- PAGE 9 -->
-<div class="page" style="display:none;">
+<!-- SUPPORT -->
+
+<section class="page" id="page10">
     <div class="card">
 
-        <h2>And About You... ❤️</h2>
+        <div style="font-size:60px;">✨❤️</div>
+
+        <h2>You Believe In Me</h2>
 
         <p>
-            I know you have a lot to go through in life.
-        </p>
-
-        <p>
-            You have responsibilities.
-            You have your own battles.
-            You have things you don't always say.
-        </p>
-
-        <p style="font-size:27px;color:#c9184a;font-weight:bold;">
-            But remember...
-        </p>
-
-        <p style="font-size:27px;color:#c9184a;">
-            You are never alone, miii love. ❤️
+            You always encourage me
+            to do things.
+            <br><br>
+            You support my dreams
+            even when I forget
+            how much I am capable of.
+            <br><br>
+            You make me believe
+            that I have a spark,
+            a talent,
+            something special inside me.
+            <br><br>
+            And I hope you know
+            how much that means to me.
         </p>
 
         <button onclick="nextPage()">Next ❤️</button>
 
     </div>
-</div>
+</section>
+
+
+<!-- NEVER ALONE -->
+
+<section class="page" id="page11">
+    <div class="card">
+
+        <div style="font-size:70px;">🫂❤️</div>
+
+        <h2>You Are Never Alone</h2>
+
+        <p>
+            I know you have a lot
+            to go through in life.
+            <br><br>
+            You have responsibilities,
+            struggles,
+            and so many things
+            on your shoulders.
+            <br><br>
+
+            But please remember...
+            <br><br>
+
+            <b>
+                You are never alone,
+                miii love. ❤️
+            </b>
+
+            <br><br>
+
+            No matter how difficult life becomes,
+            I want to be someone
+            who stands beside you.
+        </p>
+
+        <button onclick="nextPage()">Next ❤️</button>
+
+    </div>
+</section>
 
 
 <!-- PHOTO 1 -->
-<div class="page" style="display:none;">
+
+<section class="page" id="page12">
     <div class="card">
+
+        <img class="photo" src="ruh%20albi.jpeg">
 
         <h2>My Ruh Albi ❤️</h2>
 
-        <img src="ruh%20albi.jpeg" alt="My Ruh Albi">
-
         <p>
-            My favourite person. 🥹❤️
+            My favourite person.
+            My safe place.
+            My love.
         </p>
 
         <button onclick="nextPage()">Next ❤️</button>
 
     </div>
-</div>
+</section>
 
 
 <!-- PHOTO 2 -->
-<div class="page" style="display:none;">
+
+<section class="page" id="page13">
     <div class="card">
 
-        <h2>A Little Memory ❤️</h2>
-
-        <img src="august%209.jpeg" alt="Our Memory">
+        <img class="photo" src="august%209.jpeg">
 
         <p>
-            Every memory with you means something to me.
+            One more memory
+            I want to keep forever. ❤️
         </p>
 
         <button onclick="nextPage()">Next ❤️</button>
 
     </div>
-</div>
+</section>
 
 
 <!-- PHOTO 3 -->
-<div class="page" style="display:none;">
+
+<section class="page" id="page14">
     <div class="card">
 
-        <h2>The Day It Began ❤️</h2>
+        <img class="photo" src="April%2030.jpeg">
 
-        <img src="April%2030.jpeg" alt="April 30">
+        <h2>30.04.2025 ❤️</h2>
 
         <p>
-            30 April 2025...
-            a date I'll always remember.
+            The day our story
+            started becoming different.
         </p>
 
         <button onclick="nextPage()">Next ❤️</button>
 
     </div>
-</div>
+</section>
 
 
 <!-- PHOTO 4 -->
-<div class="page" style="display:none;">
+
+<section class="page" id="page15">
     <div class="card">
 
-        <h2>Us 🥹❤️</h2>
-
-        <img src="oii.jpeg" alt="Us">
+        <img class="photo" src="oii.jpeg">
 
         <p>
-            Just us...
-            and all the memories still waiting for us.
+            And here we are...
+            still writing our story. ❤️
         </p>
 
         <button onclick="nextPage()">Next ❤️</button>
 
     </div>
-</div>
+</section>
 
 
 <!-- SONG PAGE -->
-<div class="page" style="display:none;">
+
+<section class="page" id="page16">
     <div class="card">
 
-        <h2>Our Song 🎶❤️</h2>
+        <div class="song-icon">🎶❤️</div>
+
+        <h2>Our Song</h2>
 
         <p>
-            Now I want you to listen to this...
+            Some feelings are difficult
+            to explain with words...
+            <br>
+            so let this song say
+            a little of what my heart feels.
         </p>
 
-        <p>
-            This song reminds me of us.
-            🥹❤️
-        </p>
-
-        <div class="audio-area">
-
-            <button
-                class="song-button"
-                id="songButton"
-                onclick="playSong()"
-            >
-                ▶️ Play Our Song 🎶❤️
-            </button>
-
-        </div>
-
-        <p style="
-            font-size:24px;
-            color:#c9184a;
-            font-style:italic;
-            line-height:1.8;
-        ">
-            Nee naan anbeeee... ❤️<br>
-            Ini endhan ulagam...<br>
-            Ini endhan payanam...
-        </p>
-
-        <button onclick="nextPage()">
-            Continue ❤️
+        <button id="songButton" onclick="playSong()">
+            ▶️ Play Our Song 🎶❤️
         </button>
 
+        <p style="margin-top:35px; font-style:italic;">
+            “Nee naan anbeeee...
+            <br>
+            ini enthan ulaham...
+            <br>
+            ini enthan payanam...” ❤️
+        </p>
+
+        <button onclick="nextPage()">Next ❤️</button>
+
     </div>
-</div>
+</section>
 
 
-<!-- AUDIO FILE -->
+<!-- BIRTHDAY MESSAGE -->
+
+<section class="page" id="page17">
+    <div class="card">
+
+        <div style="font-size:75px;">🎂🌹❤️</div>
+
+        <h1>Happy Birthday, My Love</h1>
+
+        <p>
+            I don't know what the future
+            has written for us...
+            <br><br>
+            But I know what I wish for.
+            <br><br>
+            More memories.
+            More laughter.
+            More silly fights.
+            More hugs.
+            More birthdays.
+            More life together.
+        </p>
+
+        <button onclick="nextPage()">One Last Thing ❤️</button>
+
+    </div>
+</section>
+
+
+<!-- FINAL PAGE -->
+
+<section class="page" id="page18">
+    <div class="card">
+
+        <div style="font-size:80px;">❤️🌹❤️</div>
+
+        <h1>To My Ruh Albi</h1>
+
+        <p>
+            Thank you for coming back
+            into my life.
+            <br><br>
+
+            Thank you for believing in me,
+            supporting my dreams,
+            and loving me even
+            when I make things difficult.
+            <br><br>
+
+            I may fight with you,
+            annoy you,
+            and sometimes make you crazy...
+            but deep inside,
+            you are someone
+            I never want to lose.
+            <br><br>
+
+            I want to see you achieve
+            everything you dream about.
+            <br><br>
+
+            And when you look around
+            during the difficult days,
+            I want you to remember
+            that someone is always
+            cheering for you.
+            ❤️
+            <br><br>
+
+            <b>
+                I want to spend
+                all your coming birthdays
+                with you,
+                my birthday partner. ❤️
+            </b>
+            <br><br>
+
+            Forever yours,
+            <br>
+            <b>Ruh Hayathi ❤️</b>
+        </p>
+
+        <div style="font-size:45px; margin-top:20px;">
+            💋❤️💋❤️💋
+        </div>
+
+        <p class="small">
+            Made with all my heart, just for you.
+        </p>
+
+    </div>
+</section>
+
+
+<!-- MUSIC -->
+
 <audio id="ourSong" preload="auto">
     <source src="song.mp3" type="audio/mpeg">
 </audio>
 
 
-<!-- BIRTHDAY PAGE -->
-<div class="page" style="display:none;">
-    <div class="card">
-
-        <div style="font-size:70px;">🎂🎈❤️</div>
-
-        <h1>Happy Birthday, My Love ❤️</h1>
-
-        <p>
-            I hope this year brings you everything
-            your heart deserves.
-        </p>
-
-        <p>
-            And I hope I get to be there beside you
-            through all of it.
-        </p>
-
-        <button onclick="nextPage()">
-            One Last Thing... 💌
-        </button>
-
-    </div>
-</div>
-
-
-<!-- FINAL PAGE -->
-<div class="page" style="display:none;">
-    <div class="card">
-
-        <div style="font-size:65px;">
-            💋❤️💋
-        </div>
-
-        <h1>My Birthday Partner ❤️</h1>
-
-        <p class="final-love">
-            I want to spend all your coming birthdays
-            with u. ❤️
-        </p>
-
-        <p>
-            Not just this birthday...
-            but every birthday that comes after this.
-        </p>
-
-        <p>
-            Through the happy days,
-            difficult days,
-            silly fights,
-            laughter,
-            dreams,
-            and everything in between...
-        </p>
-
-        <p>
-            I want to be there.
-        </p>
-
-        <p>
-            And whenever life feels heavy,
-            I want you to remember that
-            you have someone who loves you deeply.
-            ❤️
-        </p>
-
-        <p class="signature">
-            You are my Ruh Albi. ❤️
-        </p>
-
-        <p style="font-size:27px;">
-            Happy Birthday, my love. 🥹❤️
-        </p>
-
-        <p style="font-size:22px;">
-            Forever your Ruh Hayathi ❤️
-        </p>
-
-        <div style="font-size:55px;margin-top:20px;">
-            💋💋💋
-        </div>
-
-        <p style="font-size:18px;color:#8a4a5c;">
-            With all my heart,
-            today and always. ❤️
-        </p>
-
-    </div>
-</div>
-
-
 <script>
 
-let currentPage = 0;
+let currentPage = 1;
+const totalPages = 18;
 
-const pages = document.querySelectorAll(".page");
+function showPage(pageNumber) {
 
-
-function showPage(number) {
-
-    pages.forEach(function(page) {
-        page.style.display = "none";
+    document.querySelectorAll(".page").forEach(function(page) {
+        page.classList.remove("active");
     });
 
-    pages[number].style.display = "flex";
+    document.getElementById("page" + pageNumber).classList.add("active");
 
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
+    currentPage = pageNumber;
+
+    createHearts();
 }
 
+function nextPage() {
+
+    if (currentPage < totalPages) {
+        showPage(currentPage + 1);
+    }
+
+}
 
 function checkPassword() {
 
-    const password =
-        document.getElementById("password").value;
+    const password = document.getElementById("password").value;
+    const error = document.getElementById("error");
 
     if (password === "30042025") {
 
-        currentPage = 1;
+        error.innerHTML = "";
 
-        showPage(currentPage);
+        showPage(2);
 
         createHearts();
-
         createKisses();
 
     } else {
 
-        document.getElementById("error").style.display = "block";
+        error.innerHTML = "Hmm... that's not our secret date 😘❤️";
 
     }
+
 }
 
-
-function nextPage() {
-
-    if (currentPage < pages.length - 1) {
-
-        currentPage++;
-
-        showPage(currentPage);
-
-        createHearts();
-
-        createKisses();
-
-    }
-}
-
-
-/* PLAY / PAUSE SONG */
 
 function playSong() {
 
-    const song =
-        document.getElementById("ourSong");
-
-    const button =
-        document.getElementById("songButton");
-
+    const song = document.getElementById("ourSong");
+    const button = document.getElementById("songButton");
 
     if (song.paused) {
 
         song.play()
         .then(function() {
 
-            button.innerHTML =
-                "⏸️ Pause Our Song ❤️";
+            button.innerHTML = "⏸️ Pause Our Song ❤️";
 
             button.classList.add("playing");
 
             createHearts();
-
             createKisses();
 
         })
         .catch(function(error) {
 
-            alert(
-                "The song could not start. Please refresh the page and try again ❤️"
-            );
+            alert("The song could not start. Please refresh the page and try again ❤️");
 
             console.log(error);
 
@@ -883,54 +876,30 @@ function playSong() {
 
         song.pause();
 
-        button.innerHTML =
-            "▶️ Play Our Song 🎶❤️";
+        button.innerHTML = "▶️ Play Our Song 🎶❤️";
 
         button.classList.remove("playing");
 
     }
+
 }
 
 
-/* WHEN SONG ENDS */
-
-document.getElementById("ourSong").addEventListener(
-    "ended",
-    function() {
-
-        const button =
-            document.getElementById("songButton");
-
-        button.innerHTML =
-            "▶️ Play Our Song 🎶❤️";
-
-        button.classList.remove("playing");
-
-    }
-);
-
-
-/* HEART ANIMATION */
-
 function createHearts() {
 
-    for (let i = 0; i < 8; i++) {
+    for (let i = 0; i < 5; i++) {
 
-        const heart =
-            document.createElement("div");
+        const heart = document.createElement("div");
 
         heart.className = "heart";
 
-        heart.innerHTML =
-            Math.random() > 0.5
-            ? "❤️"
-            : "💕";
+        heart.innerHTML = "❤️";
 
-        heart.style.left =
-            Math.random() * 100 + "vw";
+        heart.style.left = Math.random() * 100 + "vw";
 
-        heart.style.animationDuration =
-            (3 + Math.random() * 3) + "s";
+        heart.style.bottom = "-30px";
+
+        heart.style.animationDuration = (3 + Math.random() * 3) + "s";
 
         document.body.appendChild(heart);
 
@@ -939,52 +908,35 @@ function createHearts() {
         }, 6000);
 
     }
+
 }
 
-
-/* KISS ANIMATION */
 
 function createKisses() {
 
     for (let i = 0; i < 3; i++) {
 
-        const kiss =
-            document.createElement("div");
+        const kiss = document.createElement("div");
 
         kiss.className = "kiss";
 
         kiss.innerHTML = "💋";
 
-        kiss.style.left =
-            (20 + Math.random() * 60) + "vw";
+        kiss.style.left = Math.random() * 100 + "vw";
 
-        kiss.style.bottom =
-            (20 + Math.random() * 20) + "vh";
+        kiss.style.bottom = "-30px";
+
+        kiss.style.animationDuration = (3 + Math.random() * 2) + "s";
 
         document.body.appendChild(kiss);
 
         setTimeout(function() {
             kiss.remove();
-        }, 3000);
+        }, 6000);
 
     }
+
 }
-
-
-/* ENTER KEY FOR PASSWORD */
-
-document.getElementById("password").addEventListener(
-    "keydown",
-    function(event) {
-
-        if (event.key === "Enter") {
-
-            checkPassword();
-
-        }
-
-    }
-);
 
 </script>
 
