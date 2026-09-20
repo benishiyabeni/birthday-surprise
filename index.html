@@ -7,104 +7,125 @@
 <title>For My Ruh Albi ❤️</title>
 
 <style>
+
 * {
     box-sizing: border-box;
 }
 
 body {
     margin: 0;
+    min-height: 100vh;
     font-family: Georgia, serif;
-    background: linear-gradient(135deg, #ffd6e7, #ffeef5, #ffd1dc);
+    background: linear-gradient(135deg, #ffd6e7, #fff0f5, #ffc4d6);
     color: #5b2435;
-    text-align: center;
-    overflow-x: hidden;
+    overflow: hidden;
 }
+
+/* PASSWORD */
 
 #passwordScreen {
     position: fixed;
     inset: 0;
-    background: linear-gradient(135deg, #ff8fab, #ffb3c6);
+    background: linear-gradient(135deg, #ff7fa3, #ffb3c6);
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 9999;
     padding: 20px;
+    z-index: 9999;
 }
 
 .passwordBox {
     background: white;
-    padding: 35px 25px;
-    border-radius: 25px;
-    max-width: 380px;
     width: 100%;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    max-width: 380px;
+    padding: 35px 25px;
+    border-radius: 30px;
+    text-align: center;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.2);
 }
 
 .passwordBox h1 {
-    margin-top: 0;
-    color: #d6336c;
+    color: #c9184a;
+    font-size: 32px;
+}
+
+.passwordBox p {
+    line-height: 1.6;
 }
 
 input {
     width: 100%;
     padding: 14px;
-    border-radius: 12px;
     border: 1px solid #ddd;
-    font-size: 16px;
+    border-radius: 15px;
     text-align: center;
+    font-size: 17px;
     margin: 15px 0;
 }
 
 button {
+    border: none;
     background: #d6336c;
     color: white;
-    border: none;
     padding: 13px 25px;
-    border-radius: 25px;
+    border-radius: 30px;
     font-size: 16px;
     cursor: pointer;
+    margin: 8px;
 }
 
 button:hover {
     transform: scale(1.05);
 }
 
+/* WEBSITE */
+
 #website {
     display: none;
+    height: 100vh;
+    position: relative;
 }
 
-header {
-    padding: 70px 20px 50px;
+/* SLIDES */
+
+.slide {
+    position: absolute;
+    inset: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    text-align: center;
 }
 
-header h1 {
-    font-size: 42px;
+.slide.active {
+    display: flex;
+    animation: slideIn 0.7s ease;
+}
+
+.content {
+    background: rgba(255,255,255,0.92);
+    width: 100%;
+    max-width: 700px;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 35px 25px;
+    border-radius: 30px;
+    box-shadow: 0 10px 40px rgba(130,30,60,0.18);
+}
+
+h1 {
     color: #c9184a;
-    margin-bottom: 10px;
+    font-size: 40px;
 }
 
-header p {
+h2 {
+    color: #c9184a;
+    font-size: 30px;
+}
+
+p {
     font-size: 19px;
-}
-
-.card {
-    background: rgba(255,255,255,0.88);
-    width: 90%;
-    max-width: 750px;
-    margin: 30px auto;
-    padding: 30px 25px;
-    border-radius: 25px;
-    box-shadow: 0 8px 25px rgba(150,40,70,0.15);
-    animation: fadeIn 1.5s ease;
-}
-
-.card h2 {
-    color: #c9184a;
-    font-size: 28px;
-}
-
-.card p {
-    font-size: 18px;
     line-height: 1.8;
 }
 
@@ -113,115 +134,138 @@ header p {
     font-weight: bold;
 }
 
-.photos {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-    margin-top: 20px;
+.small {
+    font-size: 16px;
 }
 
-.photos img {
+.nextArea {
+    margin-top: 25px;
+}
+
+/* PHOTOS */
+
+.photo {
     width: 100%;
-    height: 280px;
+    max-width: 450px;
+    height: 430px;
     object-fit: cover;
-    border-radius: 20px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    border-radius: 25px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.18);
 }
 
-.song {
-    font-size: 22px;
-    color: #b5174f;
-    font-style: italic;
-    line-height: 1.8;
-}
+/* FINAL */
 
 .final {
-    background: linear-gradient(135deg, #ff8fab, #ffb3c6);
+    background: linear-gradient(135deg, #ff7fa3, #ffb3c6);
     color: white;
 }
 
+.final .content {
+    background: rgba(255,255,255,0.18);
+    color: white;
+    backdrop-filter: blur(10px);
+}
+
+.final h1,
 .final h2 {
     color: white;
 }
 
+/* HEARTS */
+
 .heart {
     position: fixed;
-    bottom: -20px;
+    bottom: -30px;
     font-size: 25px;
-    animation: floatUp 6s linear forwards;
     pointer-events: none;
+    animation: floatUp 6s linear forwards;
+    z-index: 10000;
 }
+
+/* KISSES */
 
 .kiss {
     position: fixed;
-    font-size: 35px;
-    animation: kissAnimation 2s ease-out forwards;
+    font-size: 38px;
     pointer-events: none;
+    z-index: 10001;
+    animation: kiss 2s ease-out forwards;
 }
 
-@keyframes fadeIn {
+/* ANIMATIONS */
+
+@keyframes slideIn {
+
     from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateX(60px);
     }
+
     to {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateX(0);
     }
+
 }
 
 @keyframes floatUp {
-    0% {
-        transform: translateY(0) rotate(0deg);
+
+    from {
+        transform: translateY(0);
         opacity: 1;
     }
 
-    100% {
-        transform: translateY(-100vh) rotate(360deg);
+    to {
+        transform: translateY(-110vh);
         opacity: 0;
     }
+
 }
 
-@keyframes kissAnimation {
+@keyframes kiss {
+
     0% {
         transform: scale(0.3);
         opacity: 0;
     }
 
-    50% {
+    40% {
         transform: scale(1.4);
         opacity: 1;
     }
 
     100% {
-        transform: translateY(-150px) scale(1);
+        transform: translateY(-180px) scale(1);
         opacity: 0;
     }
+
 }
 
-@media (max-width: 600px) {
+@media(max-width:600px) {
 
-    header h1 {
+    h1 {
         font-size: 32px;
     }
 
-    .card {
-        width: 94%;
-        padding: 25px 18px;
+    h2 {
+        font-size: 26px;
     }
 
-    .photos {
-        grid-template-columns: 1fr;
+    p {
+        font-size: 17px;
     }
 
-    .photos img {
+    .photo {
         height: 350px;
     }
+
 }
+
 </style>
 </head>
 
 <body>
+
 
 <!-- PASSWORD SCREEN -->
 
@@ -232,24 +276,25 @@ header p {
         <h1>For My Ruh Albi ❤️</h1>
 
         <p>
-            I made something little for you... 🥹❤️
+            I made something little for you...
+            but it contains a lot of my heart. 🥹❤️
         </p>
 
         <p>
-            Only you can open it.
+            Enter our special date to open it.
         </p>
 
         <input
             type="password"
             id="password"
-            placeholder="Enter our special date"
+            placeholder="Our special date"
         >
 
         <button onclick="openWebsite()">
             Open My Heart ❤️
         </button>
 
-        <p id="wrongPassword" style="color:red;"></p>
+        <p id="wrong" style="color:red;"></p>
 
     </div>
 
@@ -260,326 +305,536 @@ header p {
 
 <div id="website">
 
-<header>
 
-    <h1>Happy Birthday, Ruh Albi ❤️</h1>
+<!-- 1 -->
 
-    <p>
-        A little piece of my heart, made just for you.
-    </p>
+<section class="slide active">
 
-</header>
+<div class="content">
 
+<h1>Happy Birthday ❤️</h1>
 
-<!-- OUR BEGINNING -->
+<h2>My Ruh Albi 🥹</h2>
 
-<section class="card">
+<p>
+This isn't just a birthday wish...
+</p>
 
-    <h2>Where It All Began 🥹❤️</h2>
+<p>
+It's a little journey through
+our story. ❤️
+</p>
 
-    <p>
-        We started as church friends.
-        We weren't even that close back then.
-    </p>
+<div class="nextArea">
 
-    <p>
-        But somehow life had already written
-        a beautiful story for us.
-    </p>
+<button onclick="nextSlide()">
+Start Our Story ❤️
+</button>
 
-</section>
+</div>
 
-
-<!-- SCHOOL -->
-
-<section class="card">
-
-    <h2>8G → 10G 🏫❤️</h2>
-
-    <p>
-        We studied in the same school,
-        in the same class from <span class="highlight">8G to 10G</span>.
-    </p>
-
-    <p>
-        Little did we know that those ordinary
-        school days would someday become
-        some of the most precious memories of my life.
-    </p>
+</div>
 
 </section>
 
 
-<!-- FOUR YEARS -->
+<!-- 2 -->
 
-<section class="card">
+<section class="slide">
 
-    <h2>Then Came 4 Years...</h2>
+<div class="content">
 
-    <p>
-        After school, we didn't meet for almost
-        <span class="highlight">four years</span>.
-    </p>
+<h2>Before We Became Us...</h2>
 
-    <p>
-        Life took us in different directions...
-        until it brought us back to each other.
-    </p>
+<p>
+We were just church friends.
+</p>
 
-</section>
+<p>
+We weren't very close.
+We were simply two people
+living our own lives.
+</p>
 
+<p>
+But somehow...
+God had something else planned for us. ❤️
+</p>
 
-<!-- APRIL 30 -->
+<button onclick="nextSlide()">
+Next ❤️
+</button>
 
-<section class="card">
-
-    <h2>30 April 2025 ❤️</h2>
-
-    <p>
-        And then came the day I will never forget.
-    </p>
-
-    <p>
-        <span class="highlight">30.04.2025</span>
-    </p>
-
-    <p>
-        We met again after four years.
-        And that day, something changed.
-    </p>
-
-    <p>
-        You got feelings for me...
-        and slowly, our story became something
-        neither of us wanted to lose. ❤️
-    </p>
+</div>
 
 </section>
 
 
-<!-- FAMILY STORIES -->
+<!-- 3 -->
 
-<section class="card">
+<section class="slide">
 
-    <h2>When We Became Close 🫶🏻</h2>
+<div class="content">
 
-    <p>
-        We started sharing our family stories,
-        our little problems, our dreams,
-        our fears and everything in between.
-    </p>
+<h2>8G → 10G 🏫</h2>
 
-    <p>
-        Somewhere between all those conversations,
-        you became one of the closest people
-        in my life.
-    </p>
+<p>
+We studied in the same school
+and the same class from
+<span class="highlight">8G to 10G.</span>
+</p>
 
-</section>
+<p>
+Back then, we didn't know
+how important those ordinary
+school days would become.
+</p>
 
+<button onclick="nextSlide()">
+Next ❤️
+</button>
 
-<!-- FIGHTING FOR LOVE -->
-
-<section class="card">
-
-    <h2>Almost One Year Of Us ❤️‍🩹</h2>
-
-    <p>
-        We fought.
-        We argued.
-        We misunderstood each other.
-    </p>
-
-    <p>
-        I know I have fought with you a lot...
-        but somehow, you always came back behind me
-        with love in your face and in your heart.
-    </p>
-
-    <p>
-        And that means more to me than
-        I can ever explain.
-    </p>
+</div>
 
 </section>
 
 
-<!-- SUPPORT -->
+<!-- 4 -->
 
-<section class="card">
+<section class="slide">
 
-    <h2>You Believe In Me ✨</h2>
+<div class="content">
 
-    <p>
-        You encourage me to do things.
-        You support my dreams.
-    </p>
+<h2>Then... Four Years Apart</h2>
 
-    <p>
-        You make me believe that I have
-        a spark and talent in me,
-        even when I forget it myself.
-    </p>
+<p>
+After school,
+we didn't meet for almost
+<span class="highlight">four years.</span>
+</p>
 
-    <p>
-        Thank you for seeing something in me
-        that I sometimes fail to see.
-    </p>
+<p>
+Four years passed...
+and life took us in completely
+different directions.
+</p>
 
-</section>
+<button onclick="nextSlide()">
+Next ❤️
+</button>
 
-
-<!-- HIS RESPONSIBILITIES -->
-
-<section class="card">
-
-    <h2>You Are Never Alone ❤️</h2>
-
-    <p>
-        I know you have so much to go through in life.
-        So many responsibilities.
-        So many things on your shoulders.
-    </p>
-
-    <p>
-        But please remember one thing...
-    </p>
-
-    <p class="highlight" style="font-size:25px;">
-        You are never alone, miii love. ❤️
-    </p>
-
-    <p>
-        I'm always going to be someone
-        who wants to see you happy,
-        peaceful and successful.
-    </p>
+</div>
 
 </section>
 
 
-<!-- PHOTOS -->
+<!-- 5 -->
 
-<section class="card">
+<section class="slide">
 
-    <h2>Our Little Memories 📸❤️</h2>
+<div class="content">
 
-    <div class="photos">
+<h2>30 April 2025 ❤️</h2>
 
-        <img src="ruh%20albi.jpeg" alt="Ruh Albi ❤️">
+<p>
+And then...
+we met again.
+</p>
 
-        <img src="august%209.jpeg" alt="August 9 🎂">
+<p class="highlight">
+30.04.2025
+</p>
 
-        <img src="April%2030.jpeg" alt="April 30 ❤️">
+<p>
+Four years later,
+you came back into my life.
+</p>
 
-        <img src="oii.jpeg" alt="Oii 🥹">
+<p>
+And that day...
+you got feelings for me. 🥹❤️
+</p>
 
-    </div>
+<button onclick="nextSlide()">
+Next ❤️
+</button>
 
-</section>
-
-
-<!-- SONG -->
-
-<section class="card">
-
-    <h2>Our Song 🎶❤️</h2>
-
-    <p class="song">
-
-        “Nee naan anbeeee...<br>
-        ini endhan ulagam...<br>
-        ini endhan payanam...” ❤️
-
-    </p>
-
-    <p>
-        And somehow, those words feel like us.
-    </p>
+</div>
 
 </section>
 
 
-<!-- BIRTHDAY -->
+<!-- 6 -->
 
-<section class="card">
+<section class="slide">
 
-    <h2>Happy Birthday, My Love 🎂❤️</h2>
+<div class="content">
 
-    <p>
-        Today is your day.
-    </p>
+<h2>Then We Started Talking...</h2>
 
-    <p>
-        But honestly...
-        I feel lucky that I get to exist
-        in the same lifetime as you.
-    </p>
+<p>
+We started sharing our family stories.
+</p>
 
-    <p>
-        I hope this new year of your life
-        brings you peace, success,
-        happiness and everything
-        your heart deserves.
-    </p>
+<p>
+Our little problems.
+Our dreams.
+Our fears.
+Our everyday life.
+</p>
 
-</section>
+<p>
+And slowly...
+you became one of the closest
+people in my life. ❤️
+</p>
 
+<button onclick="nextSlide()">
+Next ❤️
+</button>
 
-<!-- FINAL -->
-
-<section class="card final">
-
-    <h2>One Last Thing... 💋❤️</h2>
-
-    <p>
-        From being church friends...
-        to schoolmates...
-        to strangers for four years...
-        to finding each other again...
-        and finally becoming us...
-    </p>
-
-    <p>
-        Life has taken us through so many chapters.
-    </p>
-
-    <p>
-        And if I could choose again,
-        I would still choose you.
-    </p>
-
-    <p style="font-size:24px;">
-
-        I want to spend all your coming birthdays
-        with you, my birthday partner. 🎂❤️
-
-    </p>
-
-    <p style="font-size:28px;">
-
-        Happy Birthday, Ruh Albi. ❤️
-
-    </p>
-
-    <p style="font-size:25px;">
-
-        I love you. 💋
-
-    </p>
-
-    <button onclick="surprise()">
-        One More Surprise 💋
-    </button>
+</div>
 
 </section>
 
 
-<footer style="padding:40px 20px;">
+<!-- 7 -->
 
-    Made with all my heart for my Ruh Albi ❤️
+<section class="slide">
 
-</footer>
+<div class="content">
+
+<h2>Almost One Year Of Us ❤️‍🩹</h2>
+
+<p>
+We fought.
+We argued.
+We misunderstood each other.
+</p>
+
+<p>
+I know I've fought with you
+a lot...
+</p>
+
+<p>
+But you never failed to come behind me
+with love in your face
+and in your heart.
+</p>
+
+<button onclick="nextSlide()">
+Next ❤️
+</button>
+
+</div>
+
+</section>
+
+
+<!-- 8 -->
+
+<section class="slide">
+
+<div class="content">
+
+<h2>You Believe In Me ✨</h2>
+
+<p>
+You encourage me to do things.
+</p>
+
+<p>
+You support my dreams.
+</p>
+
+<p>
+You make me believe that
+I have a spark and talent in me,
+even when I forget it myself.
+</p>
+
+<p>
+Thank you for believing in me. ❤️
+</p>
+
+<button onclick="nextSlide()">
+Next ❤️
+</button>
+
+</div>
+
+</section>
+
+
+<!-- 9 -->
+
+<section class="slide">
+
+<div class="content">
+
+<h2>For You, My Love ❤️</h2>
+
+<p>
+I know you have so much
+to go through in life.
+</p>
+
+<p>
+So many responsibilities.
+So many things on your shoulders.
+</p>
+
+<p class="highlight">
+But please remember...
+</p>
+
+<p style="font-size:25px;">
+You are never alone,
+miii love. ❤️
+</p>
+
+<button onclick="nextSlide()">
+Next ❤️
+</button>
+
+</div>
+
+</section>
+
+
+<!-- 10 PHOTO -->
+
+<section class="slide">
+
+<div class="content">
+
+<h2>Our First Memory 📸❤️</h2>
+
+<img
+class="photo"
+src="ruh%20albi.jpeg"
+alt="Ruh Albi"
+>
+
+<p>
+My Ruh Albi ❤️
+</p>
+
+<button onclick="nextSlide()">
+Next Memory 💕
+</button>
+
+</div>
+
+</section>
+
+
+<!-- 11 PHOTO -->
+
+<section class="slide">
+
+<div class="content">
+
+<h2>August 9 🎂❤️</h2>
+
+<img
+class="photo"
+src="august%209.jpeg"
+alt="August 9"
+>
+
+<p>
+Another little memory
+that belongs to us. ❤️
+</p>
+
+<button onclick="nextSlide()">
+Next Memory 💕
+</button>
+
+</div>
+
+</section>
+
+
+<!-- 12 PHOTO -->
+
+<section class="slide">
+
+<div class="content">
+
+<h2>30 April ❤️</h2>
+
+<img
+class="photo"
+src="April%2030.jpeg"
+alt="April 30"
+>
+
+<p>
+The date that changed our story. 🥹
+</p>
+
+<button onclick="nextSlide()">
+Next Memory 💕
+</button>
+
+</div>
+
+</section>
+
+
+<!-- 13 PHOTO -->
+
+<section class="slide">
+
+<div class="content">
+
+<h2>Oii... ❤️</h2>
+
+<img
+class="photo"
+src="oii.jpeg"
+alt="Oii"
+>
+
+<p>
+And then there is us...
+just being us. 🥹❤️
+</p>
+
+<button onclick="nextSlide()">
+Next ❤️
+</button>
+
+</div>
+
+</section>
+
+
+<!-- 14 SONG -->
+
+<section class="slide">
+
+<div class="content">
+
+<h2>Our Song 🎶❤️</h2>
+
+<p style="font-size:25px;color:#b5174f;">
+
+Nee naan anbeeee... ❤️<br>
+Ini endhan ulagam...<br>
+Ini endhan payanam...
+
+</p>
+
+<p>
+And somehow,
+these words feel like us.
+</p>
+
+<button onclick="nextSlide()">
+Next ❤️
+</button>
+
+</div>
+
+</section>
+
+
+<!-- 15 BIRTHDAY -->
+
+<section class="slide">
+
+<div class="content">
+
+<h1>Happy Birthday 🎂❤️</h1>
+
+<p>
+Today is your day...
+</p>
+
+<p>
+And I just want you to know
+how special you are to me.
+</p>
+
+<p>
+I hope this year gives you
+peace, happiness, success
+and everything your heart deserves.
+</p>
+
+<button onclick="nextSlide()">
+One Last Thing... 🥹
+</button>
+
+</div>
+
+</section>
+
+
+<!-- 16 FINAL -->
+
+<section class="slide final">
+
+<div class="content">
+
+<h1>Ruh Albi ❤️</h1>
+
+<p>
+From church friends...
+</p>
+
+<p>
+To schoolmates from 8G to 10G...
+</p>
+
+<p>
+To four years apart...
+</p>
+
+<p>
+To finding each other again
+on 30 April 2025...
+</p>
+
+<p>
+To everything we became after that...
+</p>
+
+<p>
+Our story has been
+one beautiful unexpected journey.
+</p>
+
+<p style="font-size:24px;">
+
+And I want to spend
+all your coming birthdays
+with you,
+my birthday partner. 🎂❤️
+
+</p>
+
+<p style="font-size:28px;">
+
+Happy Birthday,
+my Ruh Albi. ❤️
+
+</p>
+
+<button onclick="finalSurprise()">
+
+💋 One More Surprise 💋
+
+</button>
+
+</div>
+
+</section>
+
 
 </div>
 
@@ -593,7 +848,7 @@ function openWebsite() {
     const password =
         document.getElementById("password").value;
 
-    if (password === "30042025") {
+    if(password === "30042025") {
 
         document.getElementById("passwordScreen").style.display = "none";
 
@@ -603,10 +858,35 @@ function openWebsite() {
 
     } else {
 
-        document.getElementById("wrongPassword").innerText =
-            "Hmm... that's not our special date ❤️";
+        document.getElementById("wrong").innerText =
+        "That's not our special date ❤️";
 
     }
+
+}
+
+
+/* SLIDES */
+
+let currentSlide = 0;
+
+const slides =
+document.querySelectorAll(".slide");
+
+
+function nextSlide() {
+
+    slides[currentSlide].classList.remove("active");
+
+    currentSlide++;
+
+    if(currentSlide >= slides.length) {
+
+        currentSlide = slides.length - 1;
+
+    }
+
+    slides[currentSlide].classList.add("active");
 
 }
 
@@ -616,18 +896,21 @@ function openWebsite() {
 function createHeart() {
 
     const heart =
-        document.createElement("div");
+    document.createElement("div");
 
     heart.className = "heart";
 
+    const hearts =
+    ["❤️","💕","💗","💖","💘"];
+
     heart.innerHTML =
-        ["❤️","💕","💗","💖","💘"][Math.floor(Math.random()*5)];
+    hearts[Math.floor(Math.random()*hearts.length)];
 
     heart.style.left =
-        Math.random() * 100 + "vw";
+    Math.random()*100 + "vw";
 
     heart.style.animationDuration =
-        (4 + Math.random() * 4) + "s";
+    (4 + Math.random()*4) + "s";
 
     document.body.appendChild(heart);
 
@@ -635,37 +918,38 @@ function createHeart() {
 
         heart.remove();
 
-    }, 8000);
+    },8000);
 
 }
+
 
 function startHearts() {
 
-    setInterval(createHeart, 700);
+    setInterval(createHeart,700);
 
 }
 
 
-/* KISS SURPRISE */
+/* FINAL KISS */
 
-function surprise() {
+function finalSurprise() {
 
-    for (let i = 0; i < 15; i++) {
+    for(let i=0;i<25;i++) {
 
         setTimeout(() => {
 
             const kiss =
-                document.createElement("div");
+            document.createElement("div");
 
             kiss.className = "kiss";
 
             kiss.innerHTML = "💋";
 
             kiss.style.left =
-                (20 + Math.random() * 60) + "vw";
+            Math.random()*100 + "vw";
 
             kiss.style.top =
-                (40 + Math.random() * 30) + "vh";
+            (40 + Math.random()*40) + "vh";
 
             document.body.appendChild(kiss);
 
@@ -673,19 +957,19 @@ function surprise() {
 
                 kiss.remove();
 
-            }, 2000);
+            },2000);
 
-        }, i * 150);
+        },i*100);
 
     }
 
     setTimeout(() => {
 
         alert(
-            "I love you, Ruh Albi ❤️ Happy Birthday! 🎂💋"
+        "I love you, Ruh Albi ❤️💋 Happy Birthday!"
         );
 
-    }, 1800);
+    },2200);
 
 }
 
