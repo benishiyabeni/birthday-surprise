@@ -12,9 +12,9 @@
 
 body {
     margin: 0;
-    font-family: "Georgia", serif;
-    background: linear-gradient(135deg, #fff0f3, #ffe4e9, #fff7f8);
-    color: #5a1a25;
+    font-family: Georgia, "Times New Roman", serif;
+    background: linear-gradient(135deg, #fff0f3, #ffe0e7, #fff7f8);
+    color: #591923;
     text-align: center;
     overflow-x: hidden;
 }
@@ -24,9 +24,8 @@ body {
     display: none;
     justify-content: center;
     align-items: center;
-    padding: 30px 20px;
+    padding: 25px 15px;
     position: relative;
-    overflow: hidden;
 }
 
 .page.active {
@@ -34,23 +33,23 @@ body {
 }
 
 .card {
-    width: min(700px, 95%);
-    background: rgba(255,255,255,0.88);
-    padding: 40px 25px;
+    width: min(720px, 95%);
+    background: rgba(255,255,255,0.94);
+    padding: 38px 25px;
     border-radius: 30px;
-    box-shadow: 0 15px 45px rgba(130, 20, 40, 0.18);
+    box-shadow: 0 15px 45px rgba(120,20,40,0.18);
     position: relative;
     z-index: 2;
 }
 
 h1 {
-    color: #a3132c;
+    color: #a20d2d;
     font-size: 42px;
-    margin-bottom: 15px;
+    margin: 12px 0;
 }
 
 h2 {
-    color: #a3132c;
+    color: #a20d2d;
     font-size: 30px;
 }
 
@@ -61,26 +60,27 @@ p {
 
 button {
     border: none;
+    background: #a20d2d;
+    color: white;
     padding: 14px 28px;
     border-radius: 30px;
-    background: #a3132c;
-    color: white;
     font-size: 17px;
     cursor: pointer;
-    margin-top: 20px;
-    box-shadow: 0 7px 18px rgba(163,19,44,0.25);
+    margin-top: 18px;
+    box-shadow: 0 7px 18px rgba(162,13,45,0.25);
+    transition: 0.3s;
 }
 
 button:hover {
-    transform: scale(1.05);
+    transform: scale(1.06);
 }
 
 input {
     width: 85%;
-    max-width: 320px;
+    max-width: 330px;
     padding: 15px;
+    border: 2px solid #d88999;
     border-radius: 25px;
-    border: 2px solid #d98a99;
     text-align: center;
     font-size: 18px;
     outline: none;
@@ -91,109 +91,75 @@ input {
     margin-top: 12px;
 }
 
-/* ROSE BOUQUET */
 
-.bouquet-area {
-    margin: 10px auto 25px;
-    width: 320px;
-    height: 350px;
+/* =========================
+   REAL ROSE BOUQUET
+   ========================= */
+
+.bouquet {
+    width: 330px;
+    height: 390px;
+    margin: 0 auto 10px;
     position: relative;
 }
 
-.roses {
-    position: absolute;
+.bouquet svg {
     width: 100%;
-    height: 250px;
-    top: 5px;
+    height: 100%;
+    overflow: visible;
+}
+
+.rosePetal {
+    transform-origin: center;
 }
 
 .rose {
-    position: absolute;
-    font-size: 55px;
-    filter: drop-shadow(0 5px 5px rgba(100,0,0,0.25));
-    animation: roseFloat 3s ease-in-out infinite;
+    animation: roseMove 3s ease-in-out infinite;
 }
 
-.rose:nth-child(1) { left: 125px; top: 0; font-size: 65px; }
-.rose:nth-child(2) { left: 70px; top: 35px; }
-.rose:nth-child(3) { left: 175px; top: 35px; }
-.rose:nth-child(4) { left: 25px; top: 85px; }
-.rose:nth-child(5) { left: 120px; top: 70px; font-size: 62px; }
-.rose:nth-child(6) { left: 220px; top: 90px; }
-.rose:nth-child(7) { left: 75px; top: 120px; }
-.rose:nth-child(8) { left: 165px; top: 125px; }
-
-.leaf {
-    position: absolute;
-    font-size: 42px;
-    z-index: 1;
+.rose:nth-child(2) {
+    animation-delay: 0.2s;
 }
 
-.leaf.l1 { left: 30px; top: 145px; transform: rotate(-30deg); }
-.leaf.l2 { right: 20px; top: 150px; transform: rotate(30deg); }
-.leaf.l3 { left: 80px; top: 175px; transform: rotate(-15deg); }
-.leaf.l4 { right: 70px; top: 175px; transform: rotate(15deg); }
-
-.wrapping {
-    position: absolute;
-    left: 48px;
-    bottom: 10px;
-    width: 225px;
-    height: 145px;
-    background: linear-gradient(145deg, #f5d5dc, #fff3f5);
-    clip-path: polygon(10% 0%, 90% 0%, 100% 100%, 50% 82%, 0% 100%);
-    transform: rotate(2deg);
-    box-shadow: 0 8px 15px rgba(80,0,20,0.15);
+.rose:nth-child(3) {
+    animation-delay: 0.4s;
 }
 
-.ribbon {
-    position: absolute;
-    bottom: 55px;
-    left: 135px;
-    width: 50px;
-    height: 18px;
-    background: #a3132c;
-    border-radius: 50%;
-    z-index: 5;
+.rose:nth-child(4) {
+    animation-delay: 0.6s;
 }
 
-.ribbon:before,
-.ribbon:after {
-    content: "";
-    position: absolute;
-    width: 55px;
-    height: 45px;
-    border: 5px solid #a3132c;
-    top: -15px;
+.rose:nth-child(5) {
+    animation-delay: 0.8s;
 }
 
-.ribbon:before {
-    right: 30px;
-    border-radius: 50% 10% 50% 50%;
-    transform: rotate(20deg);
+.rose:nth-child(6) {
+    animation-delay: 1s;
 }
 
-.ribbon:after {
-    left: 30px;
-    border-radius: 10% 50% 50% 50%;
-    transform: rotate(-20deg);
-}
-
-@keyframes roseFloat {
+@keyframes roseMove {
     0%,100% {
-        transform: translateY(0) rotate(0deg);
+        transform: translateY(0);
     }
+
     50% {
-        transform: translateY(-7px) rotate(2deg);
+        transform: translateY(-5px);
     }
 }
 
-/* PHOTOS */
+.bouquet-title {
+    margin-top: -5px;
+}
+
+
+/* =========================
+   PHOTOS
+   ========================= */
 
 .photo {
     width: 90%;
-    max-width: 500px;
-    max-height: 480px;
+    max-width: 520px;
+    max-height: 500px;
     object-fit: contain;
     border-radius: 25px;
     margin: 20px auto;
@@ -201,10 +167,13 @@ input {
     box-shadow: 0 12px 30px rgba(100,0,30,0.2);
 }
 
-/* SONG */
 
-.song-icon {
-    font-size: 70px;
+/* =========================
+   SONG
+   ========================= */
+
+.songIcon {
+    font-size: 75px;
 }
 
 .playing {
@@ -217,14 +186,18 @@ input {
     }
 }
 
-/* HEARTS + KISSES */
+
+/* =========================
+   HEARTS & KISSES
+   ========================= */
 
 .heart,
 .kiss {
     position: fixed;
+    bottom: -40px;
     pointer-events: none;
-    z-index: 10;
-    animation: floatUp 4s linear forwards;
+    z-index: 20;
+    animation: floatUp 5s linear forwards;
 }
 
 .heart {
@@ -240,25 +213,31 @@ input {
         transform: translateY(0) scale(1);
         opacity: 1;
     }
+
     100% {
-        transform: translateY(-100vh) scale(1.6);
+        transform: translateY(-110vh) scale(1.5);
         opacity: 0;
     }
 }
 
 .small {
-    font-size: 15px;
-    opacity: 0.75;
+    font-size: 14px;
+    opacity: 0.7;
 }
 </style>
 </head>
 
 <body>
 
-<!-- PASSWORD PAGE -->
+
+<!-- =========================
+     PAGE 1 - PASSWORD
+     ========================= -->
 
 <section class="page active" id="page1">
+
     <div class="card">
+
         <div style="font-size:70px;">🔐❤️</div>
 
         <h1>Something Special For You</h1>
@@ -267,58 +246,361 @@ input {
             Only my Ruh Albi can open this little surprise. ❤️
         </p>
 
-        <input type="password" id="password" placeholder="Enter the secret password">
+        <input
+            type="password"
+            id="password"
+            placeholder="Enter our secret date"
+        >
 
         <br>
 
-        <button onclick="checkPassword()">Open My Heart ❤️</button>
+        <button onclick="checkPassword()">
+            Open My Heart ❤️
+        </button>
 
         <div class="error" id="error"></div>
+
     </div>
+
 </section>
 
 
-<!-- ROSE BOUQUET PAGE -->
+
+<!-- =========================
+     PAGE 2 - ROSE BOUQUET
+     ========================= -->
 
 <section class="page" id="page2">
+
     <div class="card">
 
-        <div class="bouquet-area">
+        <div class="bouquet">
 
-            <div class="roses">
-                <div class="rose">🌹</div>
-                <div class="rose">🌹</div>
-                <div class="rose">🌹</div>
-                <div class="rose">🌹</div>
-                <div class="rose">🌹</div>
-                <div class="rose">🌹</div>
-                <div class="rose">🌹</div>
-                <div class="rose">🌹</div>
-            </div>
+            <svg viewBox="0 0 330 390"
+                 xmlns="http://www.w3.org/2000/svg">
 
-            <div class="leaf l1">🌿</div>
-            <div class="leaf l2">🌿</div>
-            <div class="leaf l3">🍃</div>
-            <div class="leaf l4">🍃</div>
+                <!-- BACK LEAVES -->
 
-            <div class="wrapping"></div>
-            <div class="ribbon"></div>
+                <path
+                    d="M145 255 C90 210,55 180,30 150
+                       C85 160,125 190,160 235"
+                    fill="#287a3e"/>
+
+                <path
+                    d="M185 250 C235 205,275 175,300 145
+                       C245 160,210 190,175 230"
+                    fill="#287a3e"/>
+
+                <path
+                    d="M135 270 C90 245,55 235,25 220
+                       C70 215,115 225,150 250"
+                    fill="#3b914c"/>
+
+                <path
+                    d="M195 270 C240 245,275 235,305 220
+                       C260 215,215 225,180 250"
+                    fill="#3b914c"/>
+
+
+                <!-- STEMS -->
+
+                <path
+                    d="M150 170 Q160 220 160 300"
+                    stroke="#286b37"
+                    stroke-width="7"
+                    fill="none"/>
+
+                <path
+                    d="M110 150 Q135 220 155 300"
+                    stroke="#286b37"
+                    stroke-width="7"
+                    fill="none"/>
+
+                <path
+                    d="M205 150 Q180 220 165 300"
+                    stroke="#286b37"
+                    stroke-width="7"
+                    fill="none"/>
+
+                <path
+                    d="M75 175 Q120 230 155 305"
+                    stroke="#286b37"
+                    stroke-width="6"
+                    fill="none"/>
+
+                <path
+                    d="M255 175 Q210 230 175 305"
+                    stroke="#286b37"
+                    stroke-width="6"
+                    fill="none"/>
+
+
+                <!-- LEFT ROSE -->
+
+                <g class="rose">
+
+                    <circle cx="75" cy="125" r="38" fill="#9b1028"/>
+
+                    <ellipse cx="75" cy="108"
+                             rx="25" ry="15"
+                             fill="#d7193f"/>
+
+                    <ellipse cx="58" cy="120"
+                             rx="20" ry="25"
+                             fill="#c51235"/>
+
+                    <ellipse cx="92" cy="120"
+                             rx="20" ry="25"
+                             fill="#c51235"/>
+
+                    <ellipse cx="75" cy="135"
+                             rx="26" ry="18"
+                             fill="#b30f2d"/>
+
+                    <path
+                        d="M55 105 Q75 125 95 105"
+                        stroke="#ed4260"
+                        stroke-width="5"
+                        fill="none"/>
+
+                    <circle cx="75" cy="125"
+                            r="10"
+                            fill="#7d0920"/>
+
+                </g>
+
+
+                <!-- TOP MIDDLE ROSE -->
+
+                <g class="rose">
+
+                    <circle cx="165" cy="78" r="43"
+                            fill="#a80e2d"/>
+
+                    <ellipse cx="165" cy="57"
+                             rx="28" ry="17"
+                             fill="#df2047"/>
+
+                    <ellipse cx="143" cy="78"
+                             rx="23" ry="28"
+                             fill="#ca1438"/>
+
+                    <ellipse cx="187" cy="78"
+                             rx="23" ry="28"
+                             fill="#ca1438"/>
+
+                    <ellipse cx="165" cy="95"
+                             rx="28" ry="19"
+                             fill="#b30d2e"/>
+
+                    <path
+                        d="M140 58 Q165 82 190 58"
+                        stroke="#f04a67"
+                        stroke-width="5"
+                        fill="none"/>
+
+                    <circle cx="165" cy="80"
+                            r="11"
+                            fill="#7e0920"/>
+
+                </g>
+
+
+                <!-- RIGHT ROSE -->
+
+                <g class="rose">
+
+                    <circle cx="255" cy="130" r="39"
+                            fill="#9e0e29"/>
+
+                    <ellipse cx="255" cy="112"
+                             rx="26" ry="16"
+                             fill="#db1c43"/>
+
+                    <ellipse cx="235" cy="128"
+                             rx="21" ry="26"
+                             fill="#c51235"/>
+
+                    <ellipse cx="275" cy="128"
+                             rx="21" ry="26"
+                             fill="#c51235"/>
+
+                    <ellipse cx="255" cy="145"
+                             rx="26" ry="18"
+                             fill="#b20e2c"/>
+
+                    <path
+                        d="M235 110 Q255 130 275 110"
+                        stroke="#ef4966"
+                        stroke-width="5"
+                        fill="none"/>
+
+                    <circle cx="255" cy="130"
+                            r="10"
+                            fill="#7d0920"/>
+
+                </g>
+
+
+                <!-- SMALL LEFT ROSE -->
+
+                <g class="rose">
+
+                    <circle cx="115" cy="185" r="31"
+                            fill="#b10f30"/>
+
+                    <ellipse cx="115" cy="171"
+                             rx="21" ry="13"
+                             fill="#e22a4d"/>
+
+                    <ellipse cx="100" cy="184"
+                             rx="16" ry="21"
+                             fill="#cc173b"/>
+
+                    <ellipse cx="130" cy="184"
+                             rx="16" ry="21"
+                             fill="#cc173b"/>
+
+                    <ellipse cx="115" cy="198"
+                             rx="20" ry="14"
+                             fill="#a90c2c"/>
+
+                    <circle cx="115" cy="185"
+                            r="8"
+                            fill="#7b0920"/>
+
+                </g>
+
+
+                <!-- SMALL RIGHT ROSE -->
+
+                <g class="rose">
+
+                    <circle cx="215" cy="185" r="31"
+                            fill="#b10f30"/>
+
+                    <ellipse cx="215" cy="171"
+                             rx="21" ry="13"
+                             fill="#e22a4d"/>
+
+                    <ellipse cx="200" cy="184"
+                             rx="16" ry="21"
+                             fill="#cc173b"/>
+
+                    <ellipse cx="230" cy="184"
+                             rx="16" ry="21"
+                             fill="#cc173b"/>
+
+                    <ellipse cx="215" cy="198"
+                             rx="20" ry="14"
+                             fill="#a90c2c"/>
+
+                    <circle cx="215" cy="185"
+                            r="8"
+                            fill="#7b0920"/>
+
+                </g>
+
+
+                <!-- LITTLE LEAVES -->
+
+                <ellipse cx="105" cy="245"
+                         rx="13" ry="28"
+                         transform="rotate(-45 105 245)"
+                         fill="#4b9d50"/>
+
+                <ellipse cx="225" cy="245"
+                         rx="13" ry="28"
+                         transform="rotate(45 225 245)"
+                         fill="#4b9d50"/>
+
+                <ellipse cx="135" cy="265"
+                         rx="12" ry="27"
+                         transform="rotate(-25 135 265)"
+                         fill="#347f42"/>
+
+                <ellipse cx="195" cy="265"
+                         rx="12" ry="27"
+                         transform="rotate(25 195 265)"
+                         fill="#347f42"/>
+
+
+                <!-- WRAPPING PAPER -->
+
+                <path
+                    d="M70 265
+                       L260 265
+                       L225 375
+                       L165 335
+                       L105 375 Z"
+                    fill="#f7d9df"
+                    stroke="#e6aab7"
+                    stroke-width="3"/>
+
+                <path
+                    d="M70 265 L165 335 L260 265"
+                    fill="#fff0f3"
+                    opacity="0.75"/>
+
+                <path
+                    d="M105 375 L165 335 L225 375"
+                    fill="#efc1cc"
+                    opacity="0.8"/>
+
+
+                <!-- RIBBON -->
+
+                <path
+                    d="M155 318
+                       C125 300,115 325,145 330
+                       C153 331,160 326,165 321"
+                    fill="#a20d2d"/>
+
+                <path
+                    d="M175 318
+                       C205 300,215 325,185 330
+                       C177 331,170 326,165 321"
+                    fill="#a20d2d"/>
+
+                <circle cx="165"
+                        cy="321"
+                        r="10"
+                        fill="#850a24"/>
+
+                <path
+                    d="M158 328 L145 360"
+                    stroke="#a20d2d"
+                    stroke-width="7"/>
+
+                <path
+                    d="M172 328 L185 360"
+                    stroke="#a20d2d"
+                    stroke-width="7"/>
+
+            </svg>
 
         </div>
 
-        <h1>A Bouquet For You 🌹</h1>
+
+        <h1 class="bouquet-title">
+            A Bouquet For You 🌹
+        </h1>
 
         <p>
             Before you enter our little story...
             <br><br>
+
             I wanted to give you something first. ❤️
             <br><br>
-            A bouquet of roses for the person
-            who has become so precious to my heart.
+
+            A bouquet of red roses
+            for the person who holds
+            such a special place in my heart.
         </p>
 
         <p>
-            Every rose here carries a little piece of my love for you. 🌹
+            Every rose carries a little piece
+            of my love for you. 🌹
         </p>
 
         <button onclick="nextPage()">
@@ -326,12 +608,17 @@ input {
         </button>
 
     </div>
+
 </section>
 
 
-<!-- BIRTHDAY PAGE -->
+
+<!-- =========================
+     PAGE 3
+     ========================= -->
 
 <section class="page" id="page3">
+
     <div class="card">
 
         <div style="font-size:70px;">🎂❤️</div>
@@ -351,21 +638,27 @@ input {
         </button>
 
     </div>
+
 </section>
 
 
-<!-- CHURCH FRIENDS -->
+
+<!-- =========================
+     PAGE 4
+     ========================= -->
 
 <section class="page" id="page4">
+
     <div class="card">
 
-        <div style="font-size:55px;">⛪❤️</div>
+        <div style="font-size:60px;">⛪❤️</div>
 
         <h2>Where It Started</h2>
 
         <p>
             We were just church friends.
             <br><br>
+
             Nothing dramatic.
             Nothing that made us think
             we would become this important
@@ -375,15 +668,20 @@ input {
         <button onclick="nextPage()">Next ❤️</button>
 
     </div>
+
 </section>
 
 
-<!-- SCHOOL -->
+
+<!-- =========================
+     PAGE 5
+     ========================= -->
 
 <section class="page" id="page5">
+
     <div class="card">
 
-        <div style="font-size:55px;">🏫❤️</div>
+        <div style="font-size:60px;">🏫❤️</div>
 
         <h2>8G → 10G</h2>
 
@@ -392,6 +690,7 @@ input {
             in the same class,
             from 8G to 10G.
             <br><br>
+
             We knew each other...
             but we didn't know what life
             had planned for us.
@@ -400,12 +699,17 @@ input {
         <button onclick="nextPage()">Next ❤️</button>
 
     </div>
+
 </section>
 
 
-<!-- FOUR YEARS -->
+
+<!-- =========================
+     PAGE 6
+     ========================= -->
 
 <section class="page" id="page6">
+
     <div class="card">
 
         <div style="font-size:60px;">⌛❤️</div>
@@ -415,9 +719,11 @@ input {
         <p>
             Then life took us in different directions.
             <br><br>
+
             Four whole years passed
             without meeting each other.
             <br><br>
+
             And then...
             everything changed.
         </p>
@@ -425,12 +731,17 @@ input {
         <button onclick="nextPage()">Next ❤️</button>
 
     </div>
+
 </section>
 
 
-<!-- APRIL 30 -->
+
+<!-- =========================
+     PAGE 7
+     ========================= -->
 
 <section class="page" id="page7">
+
     <div class="card">
 
         <div style="font-size:60px;">🌹❤️</div>
@@ -442,10 +753,12 @@ input {
             I met you again on
             <b>30 April 2025.</b>
             <br><br>
+
             And that day became
             one of the most beautiful
             turning points of my life.
             <br><br>
+
             You got feelings...
             and slowly,
             we became something more.
@@ -454,12 +767,17 @@ input {
         <button onclick="nextPage()">Next ❤️</button>
 
     </div>
+
 </section>
 
 
-<!-- FAMILY STORIES -->
+
+<!-- =========================
+     PAGE 8
+     ========================= -->
 
 <section class="page" id="page8">
+
     <div class="card">
 
         <div style="font-size:60px;">💬❤️</div>
@@ -472,6 +790,7 @@ input {
             our fears,
             our dreams...
             <br><br>
+
             And somewhere between
             all those conversations,
             you became my person.
@@ -480,12 +799,17 @@ input {
         <button onclick="nextPage()">Next ❤️</button>
 
     </div>
+
 </section>
 
 
-<!-- FIGHT FOR LOVE -->
+
+<!-- =========================
+     PAGE 9
+     ========================= -->
 
 <section class="page" id="page9">
+
     <div class="card">
 
         <div style="font-size:60px;">🥺❤️</div>
@@ -495,6 +819,7 @@ input {
         <p>
             We fought so much for this love.
             <br><br>
+
             Almost one whole year
             of emotions,
             misunderstandings,
@@ -502,19 +827,26 @@ input {
             fights...
             and still choosing each other.
             <br><br>
+
             Somehow,
-            our love kept finding its way back.
+            our love kept finding
+            its way back.
         </p>
 
         <button onclick="nextPage()">Next ❤️</button>
 
     </div>
+
 </section>
 
 
-<!-- SUPPORT -->
+
+<!-- =========================
+     PAGE 10
+     ========================= -->
 
 <section class="page" id="page10">
+
     <div class="card">
 
         <div style="font-size:60px;">✨❤️</div>
@@ -525,15 +857,18 @@ input {
             You always encourage me
             to do things.
             <br><br>
+
             You support my dreams
             even when I forget
             how much I am capable of.
             <br><br>
+
             You make me believe
             that I have a spark,
             a talent,
             something special inside me.
             <br><br>
+
             And I hope you know
             how much that means to me.
         </p>
@@ -541,12 +876,17 @@ input {
         <button onclick="nextPage()">Next ❤️</button>
 
     </div>
+
 </section>
 
 
-<!-- NEVER ALONE -->
+
+<!-- =========================
+     PAGE 11
+     ========================= -->
 
 <section class="page" id="page11">
+
     <div class="card">
 
         <div style="font-size:70px;">🫂❤️</div>
@@ -557,6 +897,7 @@ input {
             I know you have a lot
             to go through in life.
             <br><br>
+
             You have responsibilities,
             struggles,
             and so many things
@@ -573,7 +914,8 @@ input {
 
             <br><br>
 
-            No matter how difficult life becomes,
+            No matter how difficult
+            life becomes,
             I want to be someone
             who stands beside you.
         </p>
@@ -581,36 +923,56 @@ input {
         <button onclick="nextPage()">Next ❤️</button>
 
     </div>
+
 </section>
 
 
-<!-- PHOTO 1 -->
+
+<!-- =========================
+     PAGE 12
+     ========================= -->
 
 <section class="page" id="page12">
+
     <div class="card">
 
-        <img class="photo" src="ruh%20albi.jpeg">
+        <img
+            class="photo"
+            src="ruh%20albi.jpeg"
+            alt="My Ruh Albi"
+        >
 
         <h2>My Ruh Albi ❤️</h2>
 
         <p>
             My favourite person.
+            <br>
             My safe place.
+            <br>
             My love.
         </p>
 
         <button onclick="nextPage()">Next ❤️</button>
 
     </div>
+
 </section>
 
 
-<!-- PHOTO 2 -->
+
+<!-- =========================
+     PAGE 13
+     ========================= -->
 
 <section class="page" id="page13">
+
     <div class="card">
 
-        <img class="photo" src="august%209.jpeg">
+        <img
+            class="photo"
+            src="august%209.jpeg"
+            alt="Our memory"
+        >
 
         <p>
             One more memory
@@ -620,15 +982,24 @@ input {
         <button onclick="nextPage()">Next ❤️</button>
 
     </div>
+
 </section>
 
 
-<!-- PHOTO 3 -->
+
+<!-- =========================
+     PAGE 14
+     ========================= -->
 
 <section class="page" id="page14">
+
     <div class="card">
 
-        <img class="photo" src="April%2030.jpeg">
+        <img
+            class="photo"
+            src="April%2030.jpeg"
+            alt="April 30"
+        >
 
         <h2>30.04.2025 ❤️</h2>
 
@@ -640,15 +1011,24 @@ input {
         <button onclick="nextPage()">Next ❤️</button>
 
     </div>
+
 </section>
 
 
-<!-- PHOTO 4 -->
+
+<!-- =========================
+     PAGE 15
+     ========================= -->
 
 <section class="page" id="page15">
+
     <div class="card">
 
-        <img class="photo" src="oii.jpeg">
+        <img
+            class="photo"
+            src="oii.jpeg"
+            alt="Our memory"
+        >
 
         <p>
             And here we are...
@@ -658,50 +1038,70 @@ input {
         <button onclick="nextPage()">Next ❤️</button>
 
     </div>
+
 </section>
 
 
-<!-- SONG PAGE -->
+
+<!-- =========================
+     PAGE 16 - SONG
+     ========================= -->
 
 <section class="page" id="page16">
+
     <div class="card">
 
-        <div class="song-icon">🎶❤️</div>
+        <div class="songIcon">🎶❤️</div>
 
         <h2>Our Song</h2>
 
         <p>
             Some feelings are difficult
             to explain with words...
-            <br>
-            so let this song say
+            <br><br>
+
+            So let this song say
             a little of what my heart feels.
         </p>
 
-        <button id="songButton" onclick="playSong()">
+        <button
+            id="songButton"
+            onclick="playSong()"
+        >
             ▶️ Play Our Song 🎶❤️
         </button>
 
         <p style="margin-top:35px; font-style:italic;">
+
             “Nee naan anbeeee...
             <br>
             ini enthan ulaham...
             <br>
             ini enthan payanam...” ❤️
+
         </p>
 
-        <button onclick="nextPage()">Next ❤️</button>
+        <button onclick="nextPage()">
+            Next ❤️
+        </button>
 
     </div>
+
 </section>
 
 
-<!-- BIRTHDAY MESSAGE -->
+
+<!-- =========================
+     PAGE 17
+     ========================= -->
 
 <section class="page" id="page17">
+
     <div class="card">
 
-        <div style="font-size:75px;">🎂🌹❤️</div>
+        <div style="font-size:75px;">
+            🎂🌹❤️
+        </div>
 
         <h1>Happy Birthday, My Love</h1>
 
@@ -709,32 +1109,49 @@ input {
             I don't know what the future
             has written for us...
             <br><br>
+
             But I know what I wish for.
             <br><br>
+
             More memories.
+            <br>
             More laughter.
+            <br>
             More silly fights.
+            <br>
             More hugs.
+            <br>
             More birthdays.
+            <br>
             More life together.
         </p>
 
-        <button onclick="nextPage()">One Last Thing ❤️</button>
+        <button onclick="nextPage()">
+            One Last Thing ❤️
+        </button>
 
     </div>
+
 </section>
 
 
-<!-- FINAL PAGE -->
+
+<!-- =========================
+     PAGE 18 - FINAL
+     ========================= -->
 
 <section class="page" id="page18">
+
     <div class="card">
 
-        <div style="font-size:80px;">❤️🌹❤️</div>
+        <div style="font-size:80px;">
+            ❤️🌹❤️
+        </div>
 
         <h1>To My Ruh Albi</h1>
 
         <p>
+
             Thank you for coming back
             into my life.
             <br><br>
@@ -761,8 +1178,8 @@ input {
             during the difficult days,
             I want you to remember
             that someone is always
-            cheering for you.
-            ❤️
+            cheering for you. ❤️
+
             <br><br>
 
             <b>
@@ -771,11 +1188,14 @@ input {
                 with you,
                 my birthday partner. ❤️
             </b>
+
             <br><br>
 
             Forever yours,
             <br>
+
             <b>Ruh Hayathi ❤️</b>
+
         </p>
 
         <div style="font-size:45px; margin-top:20px;">
@@ -787,46 +1207,66 @@ input {
         </p>
 
     </div>
+
 </section>
 
 
-<!-- MUSIC -->
+
+<!-- =========================
+     SONG FILE
+     ========================= -->
 
 <audio id="ourSong" preload="auto">
     <source src="song.mp3" type="audio/mpeg">
 </audio>
 
 
+
 <script>
 
 let currentPage = 1;
+
 const totalPages = 18;
+
 
 function showPage(pageNumber) {
 
     document.querySelectorAll(".page").forEach(function(page) {
+
         page.classList.remove("active");
+
     });
 
-    document.getElementById("page" + pageNumber).classList.add("active");
+    document
+        .getElementById("page" + pageNumber)
+        .classList.add("active");
 
     currentPage = pageNumber;
 
     createHearts();
+
 }
+
 
 function nextPage() {
 
     if (currentPage < totalPages) {
+
         showPage(currentPage + 1);
+
     }
 
 }
 
+
 function checkPassword() {
 
-    const password = document.getElementById("password").value;
-    const error = document.getElementById("error");
+    const password =
+        document.getElementById("password").value;
+
+    const error =
+        document.getElementById("error");
+
 
     if (password === "30042025") {
 
@@ -835,11 +1275,13 @@ function checkPassword() {
         showPage(2);
 
         createHearts();
+
         createKisses();
 
     } else {
 
-        error.innerHTML = "Hmm... that's not our secret date 😘❤️";
+        error.innerHTML =
+            "Hmm... that's not our secret date 😘❤️";
 
     }
 
@@ -848,25 +1290,33 @@ function checkPassword() {
 
 function playSong() {
 
-    const song = document.getElementById("ourSong");
-    const button = document.getElementById("songButton");
+    const song =
+        document.getElementById("ourSong");
+
+    const button =
+        document.getElementById("songButton");
+
 
     if (song.paused) {
 
         song.play()
         .then(function() {
 
-            button.innerHTML = "⏸️ Pause Our Song ❤️";
+            button.innerHTML =
+                "⏸️ Pause Our Song ❤️";
 
             button.classList.add("playing");
 
             createHearts();
+
             createKisses();
 
         })
         .catch(function(error) {
 
-            alert("The song could not start. Please refresh the page and try again ❤️");
+            alert(
+                "The song could not start. Please refresh the page and try again ❤️"
+            );
 
             console.log(error);
 
@@ -876,7 +1326,8 @@ function playSong() {
 
         song.pause();
 
-        button.innerHTML = "▶️ Play Our Song 🎶❤️";
+        button.innerHTML =
+            "▶️ Play Our Song 🎶❤️";
 
         button.classList.remove("playing");
 
@@ -889,22 +1340,26 @@ function createHearts() {
 
     for (let i = 0; i < 5; i++) {
 
-        const heart = document.createElement("div");
+        const heart =
+            document.createElement("div");
 
         heart.className = "heart";
 
         heart.innerHTML = "❤️";
 
-        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.left =
+            Math.random() * 100 + "vw";
 
-        heart.style.bottom = "-30px";
-
-        heart.style.animationDuration = (3 + Math.random() * 3) + "s";
+        heart.style.animationDuration =
+            (3 + Math.random() * 3) + "s";
 
         document.body.appendChild(heart);
 
+
         setTimeout(function() {
+
             heart.remove();
+
         }, 6000);
 
     }
@@ -916,22 +1371,26 @@ function createKisses() {
 
     for (let i = 0; i < 3; i++) {
 
-        const kiss = document.createElement("div");
+        const kiss =
+            document.createElement("div");
 
         kiss.className = "kiss";
 
         kiss.innerHTML = "💋";
 
-        kiss.style.left = Math.random() * 100 + "vw";
+        kiss.style.left =
+            Math.random() * 100 + "vw";
 
-        kiss.style.bottom = "-30px";
-
-        kiss.style.animationDuration = (3 + Math.random() * 2) + "s";
+        kiss.style.animationDuration =
+            (3 + Math.random() * 2) + "s";
 
         document.body.appendChild(kiss);
 
+
         setTimeout(function() {
+
             kiss.remove();
+
         }, 6000);
 
     }
