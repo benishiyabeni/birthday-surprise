@@ -32,8 +32,8 @@
     .card {
         width: 100%;
         max-width: 650px;
-        background: rgba(255,255,255,0.94);
-        padding: 35px 25px;
+        background: rgba(255,255,255,0.95);
+        padding: 38px 25px;
         border-radius: 30px;
         box-shadow: 0 10px 35px rgba(150, 30, 70, 0.18);
         animation: fadeIn 1s ease;
@@ -71,11 +71,12 @@
         font-size: 17px;
         cursor: pointer;
         box-shadow: 0 5px 15px rgba(201,24,74,0.25);
+        transition: 0.3s;
     }
 
     button:hover {
         background: #a9143e;
-        transform: scale(1.03);
+        transform: scale(1.05);
     }
 
     input {
@@ -123,6 +124,25 @@
         z-index: 1001;
     }
 
+    .rose {
+        font-size: 85px;
+        margin: 10px 0;
+        animation: roseAppear 2s ease;
+    }
+
+    .rose-small {
+        font-size: 32px;
+        letter-spacing: 5px;
+        margin: 15px 0;
+    }
+
+    .love-note {
+        font-size: 23px;
+        color: #c9184a;
+        font-style: italic;
+        line-height: 1.7;
+    }
+
     .audio-area {
         margin: 25px 0;
     }
@@ -142,6 +162,12 @@
         color: #c9184a;
         margin-top: 25px;
         font-style: italic;
+    }
+
+    .final-love {
+        font-size: 25px;
+        color: #c9184a;
+        line-height: 1.8;
     }
 
     @keyframes fadeIn {
@@ -183,6 +209,22 @@
             opacity: 0;
         }
     }
+
+    @keyframes roseAppear {
+        0% {
+            opacity: 0;
+            transform: scale(0.4) rotate(-10deg);
+        }
+
+        60% {
+            transform: scale(1.15) rotate(3deg);
+        }
+
+        100% {
+            opacity: 1;
+            transform: scale(1) rotate(0deg);
+        }
+    }
 </style>
 </head>
 
@@ -191,6 +233,7 @@
 <!-- PASSWORD PAGE -->
 <div class="page" id="passwordPage">
     <div class="card">
+
         <div style="font-size:65px;">🔐❤️</div>
 
         <h1>For My Ruh Albi</h1>
@@ -219,6 +262,44 @@
         <p class="error" id="error">
             Hmm... that's not it, my love 🥺❤️
         </p>
+
+    </div>
+</div>
+
+
+<!-- ROSE SURPRISE -->
+<div class="page" style="display:none;">
+    <div class="card">
+
+        <div class="rose">
+            🌹🌹🌹
+        </div>
+
+        <h1>A Bouquet For You ❤️</h1>
+
+        <div class="rose-small">
+            🌹 🌹 🌹 🌹 🌹
+        </div>
+
+        <p class="love-note">
+            These roses are for the person<br>
+            who became so special to my heart. ❤️
+        </p>
+
+        <p>
+            If I could hand you a bouquet right now,
+            this is the first thing I would give you.
+            🌹
+        </p>
+
+        <p>
+            Happy Birthday, my Ruh Albi. 🥹❤️
+        </p>
+
+        <button onclick="nextPage()">
+            Take My Hand ❤️
+        </button>
+
     </div>
 </div>
 
@@ -295,7 +376,7 @@
         </p>
 
         <p>
-            without knowing how important we would
+            Without knowing how important we would
             become to each other someday.
         </p>
 
@@ -604,7 +685,7 @@
 </div>
 
 
-<!-- HIDDEN AUDIO -->
+<!-- AUDIO FILE -->
 <audio id="ourSong" preload="auto">
     <source src="song.mp3" type="audio/mpeg">
 </audio>
@@ -646,9 +727,9 @@
 
         <h1>My Birthday Partner ❤️</h1>
 
-        <p>
+        <p class="final-love">
             I want to spend all your coming birthdays
-            with u.
+            with u. ❤️
         </p>
 
         <p>
@@ -665,8 +746,19 @@
             and everything in between...
         </p>
 
+        <p>
+            I want to be there.
+        </p>
+
+        <p>
+            And whenever life feels heavy,
+            I want you to remember that
+            you have someone who loves you deeply.
+            ❤️
+        </p>
+
         <p class="signature">
-            I choose you, Ruh Albi. ❤️
+            You are my Ruh Albi. ❤️
         </p>
 
         <p style="font-size:27px;">
@@ -681,6 +773,11 @@
             💋💋💋
         </div>
 
+        <p style="font-size:18px;color:#8a4a5c;">
+            With all my heart,
+            today and always. ❤️
+        </p>
+
     </div>
 </div>
 
@@ -690,6 +787,7 @@
 let currentPage = 0;
 
 const pages = document.querySelectorAll(".page");
+
 
 function showPage(number) {
 
@@ -719,6 +817,8 @@ function checkPassword() {
 
         createHearts();
 
+        createKisses();
+
     } else {
 
         document.getElementById("error").style.display = "block";
@@ -738,17 +838,21 @@ function nextPage() {
         createHearts();
 
         createKisses();
+
     }
 }
 
 
-/* PLAY SONG */
+/* PLAY / PAUSE SONG */
 
 function playSong() {
 
-    const song = document.getElementById("ourSong");
+    const song =
+        document.getElementById("ourSong");
 
-    const button = document.getElementById("songButton");
+    const button =
+        document.getElementById("songButton");
+
 
     if (song.paused) {
 
@@ -761,6 +865,7 @@ function playSong() {
             button.classList.add("playing");
 
             createHearts();
+
             createKisses();
 
         })
@@ -782,6 +887,7 @@ function playSong() {
             "▶️ Play Our Song 🎶❤️";
 
         button.classList.remove("playing");
+
     }
 }
 
@@ -810,12 +916,15 @@ function createHearts() {
 
     for (let i = 0; i < 8; i++) {
 
-        const heart = document.createElement("div");
+        const heart =
+            document.createElement("div");
 
         heart.className = "heart";
 
         heart.innerHTML =
-            Math.random() > 0.5 ? "❤️" : "💕";
+            Math.random() > 0.5
+            ? "❤️"
+            : "💕";
 
         heart.style.left =
             Math.random() * 100 + "vw";
@@ -828,6 +937,7 @@ function createHearts() {
         setTimeout(function() {
             heart.remove();
         }, 6000);
+
     }
 }
 
@@ -838,7 +948,8 @@ function createKisses() {
 
     for (let i = 0; i < 3; i++) {
 
-        const kiss = document.createElement("div");
+        const kiss =
+            document.createElement("div");
 
         kiss.className = "kiss";
 
@@ -855,6 +966,7 @@ function createKisses() {
         setTimeout(function() {
             kiss.remove();
         }, 3000);
+
     }
 }
 
@@ -866,15 +978,15 @@ document.getElementById("password").addEventListener(
     function(event) {
 
         if (event.key === "Enter") {
+
             checkPassword();
+
         }
 
     }
 );
 
 </script>
-   
- </body>
-</html>
+
 </body>
 </html>
