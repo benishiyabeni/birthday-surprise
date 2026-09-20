@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Ruh Albi ❤️</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    background: linear-gradient(135deg, #ffd9e8, #fff4f8, #eadcff);
+    color: #55263c;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+.screen {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 18px;
+}
+
+.card {
+    width: 100%;
+    max-width: 720px;
+    background: rgba(255,255,255,0.86);
+    border-radius: 32px;
+    padding: 38px 25px;
+    box-shadow: 0 15px 45px rgba(100,40,70,0.18);
+    backdrop-filter: blur(8px);
+}
+
+h1 {
+    font-size: 42px;
+    margin: 12px 0;
+}
+
+h2 {
+    font-size: 30px;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+.small {
+    font-size: 15px;
+}
+
+.heart-title {
+    font-size: 65px;
+}
+
+button {
+    border: none;
+    background: #d94f83;
+    color: white;
+    padding: 14px 27px;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 18px;
+    box-shadow: 0 7px 18px rgba(180,60,110,0.25);
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.08);
+}
+
+input {
+    width: 230px;
+    padding: 14px;
+    border-radius: 25px;
+    border: 1px solid #d98ba9;
+    text-align: center;
+    font-size: 16px;
+    outline: none;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Fade animation */
+
+.fade {
+    animation: fadeIn 1.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Floating hearts */
+
+.floating {
+    position: fixed;
+    bottom: -40px;
+    pointer-events: none;
+    animation: floatUp 6s linear forwards;
+    z-index: 999;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) scale(0.8);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-110vh) rotate(360deg) scale(1.3);
+        opacity: 0;
+    }
+}
+
+/* Kiss */
+
+.kiss {
+    position: fixed;
+    font-size: 45px;
+    pointer-events: none;
+    animation: kiss 2.5s ease forwards;
+    z-index: 1000;
+}
+
+@keyframes kiss {
+    0% {
+        transform: scale(0) rotate(-20deg);
+        opacity: 0;
+    }
+
+    30% {
+        transform: scale(1.2) rotate(10deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-250px) scale(1.4) rotate(20deg);
+        opacity: 0;
+    }
+}
+
+/* Photo section */
+
+.photos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.photos img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 22px;
+    box-shadow: 0 8px 20px rgba(80,30,60,0.15);
+    transition: 0.4s;
+}
+
+.photos img:hover {
+    transform: scale(1.04);
+}
+
+/* Special date */
+
+.date {
+    font-size: 44px;
+    color: #c83f70;
+    margin: 20px 0;
+}
+
+/* Song */
+
+.song {
+    margin: 25px 0;
+    padding: 20px;
+    border-radius: 20px;
+    background: #fff0f6;
+    color: #ad315f;
+    font-size: 21px;
+    font-style: italic;
+    line-height: 1.8;
+}
+
+/* Love cards */
+
+.love-box {
+    background: #fff2f7;
+    padding: 18px;
+    border-radius: 20px;
+    margin: 15px 0;
+}
+
+/* Final */
+
+.final-heart {
+    font-size: 80px;
+    animation: heartbeat 1.3s infinite;
+}
+
+@keyframes heartbeat {
+    0%,100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+.signature {
+    margin-top: 35px;
+    font-style: italic;
+    color: #a43b62;
+}
+
+@media(max-width:600px) {
+
+    h1 {
+        font-size: 34px;
+    }
+
+    h2 {
+        font-size: 25px;
+    }
+
+    p {
+        font-size: 17px;
+    }
+
+    .photos img {
+        height: 190px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+
+<!-- ========================= -->
+<!-- SECRET OPENING -->
+<!-- ========================= -->
+
+<section id="login" class="screen">
+
+<div class="card fade">
+
+<div class="heart-title">💌</div>
+
+<h1>Ruh Albi ❤️</h1>
+
+<p>
+I made something little for you...
+</p>
+
+<p>
+Something that carries a little piece of
+our story. 🥹
+</p>
+
+<p class="small">
+Only my Ruh Albi knows the way in. 💗
+</p>
+
+<input
+type="password"
+id="password"
+placeholder="Our special date ❤️">
+
+<br>
+
+<button onclick="unlock()">
+Open My Heart 💋
+</button>
+
+<p id="error"></p>
+
+</div>
+
+</section>
+
+
+
+<!-- ========================= -->
+<!-- MAIN WEBSITE -->
+<!-- ========================= -->
+
+<div id="website" class="hidden">
+
+
+<!-- WELCOME -->
+
+<section class="screen">
+
+<div class="card fade">
+
+<div class="heart-title">🎂❤️</div>
+
+<h1>
+Happy Birthday
+</h1>
+
+<h1>
+Ruh Albi
+</h1>
+
+<p>
+From a friendship that started long ago...
+to a love I never expected...
+</p>
+
+<p>
+This is a little story about
+<strong>us.</strong> ❤️
+</p>
+
+<button onclick="go('beginning')">
+Come, let's go back... 🥹
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- ========================= -->
+<!-- BEGINNING -->
+<!-- ========================= -->
+
+<section id="beginning" class="screen">
+
+<div class="card fade">
+
+<h2>
+Before We Became Us... 🫶
+</h2>
+
+<p>
+We were church friends.
+</p>
+
+<p>
+We studied in the same school,
+in the same class,
+from <strong>8G to 10G</strong>.
+</p>
+
+<p>
+But honestly...
+we weren't that close back then.
+</p>
+
+<p>
+Life took us in different directions,
+and then...
+</p>
+
+<h2>
+<strong>4 whole years.</strong>
+</h2>
+
+<p>
+We didn't meet.
+We didn't know what life was
+going to bring us next.
+</p>
+
+<button onclick="go('thirty')">
+And then came one day... ❤️
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- ========================= -->
+<!-- 30 APRIL -->
+<!-- ========================= -->
+
+<section id="thirty" class="screen">
+
+<div class="card fade">
+
+<div style="font-size:60px;">🌸</div>
+
+<p>
+After all those years...
+</p>
+
+<div class="date">
+30.04.2025
+</div>
+
+<p>
+I met you again.
+</p>
+
+<p>
+Neither of us probably knew
+that this ordinary-looking day
+was going to become such a
+special part of our lives.
+</p>
+
+<p>
+But that day...
+<strong>you got feelings.</strong> ❤️
+</p>
+
+<p>
+And slowly,
+something started changing
+between us.
+</p>
+
+<button onclick="go('closer')">
+Then we became closer... 🥹
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- ========================= -->
+<!-- BECOMING CLOSE -->
+<!-- ========================= -->
+
+<section id="closer" class="screen">
+
+<div class="card fade">
+
+<h2>
+Somehow, We Became Close ❤️
+</h2>
+
+<p>
+We started sharing our family stories.
+</p>
+
+<p>
+Our problems.
+Our fears.
+Our little secrets.
+Things we didn't just tell everyone.
+</p>
+
+<p>
+And somewhere between all
+those conversations...
+</p>
+
+<h2>
+we became each other's people. 🫂
+</h2>
+
+<p>
+That's when I realized that
+you weren't just someone from
+my past anymore.
+</p>
+
+<p>
+You were becoming a very
+special part of my present.
+❤️
+</p>
+
+<button onclick="go('fight')">
+But our story wasn't always easy... ❤️‍🩹
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- ========================= -->
+<!-- FIGHTING FOR LOVE -->
+<!-- ========================= -->
+
+<section id="fight" class="screen">
+
+<div class="card fade">
+
+<h2>
+We Fought For This Love ❤️‍🩹
+</h2>
+
+<p>
+We fought...
+</p>
+
+<p>
+Not just once.
+Not just twice.
+</p>
+
+<h2>
+Almost one whole year.
+</h2>
+
+<p>
+There were so many fights,
+so many misunderstandings,
+so many moments when things
+weren't easy.
+</p>
+
+<p>
+And yes...
+I know I fought with you
+<strong>A LOT. A LOT. 😭😂</strong>
+</p>
+
+<p>
+But somehow,
+you never stopped coming back
+with love in your heart.
+</p>
+
+<button onclick="go('support')">
+And then there's YOU... 🥹
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- ========================= -->
+<!-- SUPPORT -->
+<!-- ========================= -->
+
+<section id="support" class="screen">
+
+<div class="card fade">
+
+<h2>
+You Saw Something In Me
+That I Forgot About Myself. 🥹
+</h2>
+
+<div class="love-box">
+
+<p>
+You encourage me to do things.
+</p>
+
+</div>
+
+<div class="love-box">
+
+<p>
+You support my dreams.
+</p>
+
+</div>
+
+<div class="love-box">
+
+<p>
+You make me believe that
+I actually have a spark in me.
+</p>
+
+</div>
+
+<div class="love-box">
+
+<p>
+You make me believe that
+I have talent...
+even when I forget it myself.
+</p>
+
+</div>
+
+<p>
+Sometimes I don't see what is
+special about me.
+</p>
+
+<p>
+But you somehow see it.
+</p>
+
+<h2>
+And you remind me. ❤️
+</h2>
+
+<button onclick="go('neveralone')">
+There's something I want you to know... 💗
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- ========================= -->
+<!-- NEVER ALONE -->
+<!-- ========================= -->
+
+<section id="neveralone" class="screen">
+
+<div class="card fade">
+
+<div style="font-size:65px;">🫂❤️</div>
+
+<h2>
+My Love...
+</h2>
+
+<p>
+You have so much to go through
+in life.
+</p>
+
+<p>
+So many responsibilities.
+So many things waiting for you.
+</p>
+
+<p>
+And maybe sometimes you feel
+like you have to handle
+everything yourself.
+</p>
+
+<h1>
+But remember...
+</h1>
+
+<h2>
+You are never alone, miii love. ❤️
+</h2>
+
+<p>
+I'll always be somewhere here,
+cheering for you,
+believing in you,
+and loving you.
+</p>
+
+<button onclick="go('photos')">
+Now let's keep some memories... 📸
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- ========================= -->
+<!-- PHOTOS -->
+<!-- ========================= -->
+
+<section id="photos" class="screen">
+
+<div class="card fade">
+
+<h2>
+Little Pieces Of Us 📸❤️
+</h2>
+
+<p>
+These are just a few pictures...
+but behind every picture
+there's a memory.
+</p>
+
+<div class="photos">
+
+<img src="photo1.jpg" alt="Our memory">
+
+<img src="photo2.jpg" alt="Our memory">
+
+<img src="photo3.jpg" alt="Our memory">
+
+<img src="photo4.jpg" alt="Our memory">
+
+<img src="photo5.jpg" alt="Our memory">
+
+</div>
+
+<p>
+And hopefully...
+many, many more to come. 🥹❤️
+</p>
+
+<button onclick="go('song')">
+One thing that reminds me of us... 🎶
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- ========================= -->
+<!-- SONG -->
+<!-- ========================= -->
+
+<section id="song" class="screen">
+
+<div class="card fade">
+
+<div style="font-size:55px;">🎶❤️</div>
+
+<h2>
+Our Little Song
+</h2>
+
+<div class="song">
+
+“Nee naan anbeeee...<br>
+ini endhan ulagam...<br>
+ini endhan payanam...” ❤️
+
+</div>
+
+<p>
+Maybe that's what you became...
+</p>
+
+<h2>
+My world.<br>
+My journey. ❤️
+</h2>
+
+<button onclick="kiss()">
+A little kiss for you 💋
+</button>
+
+<br>
+
+<button onclick="go('birthday')">
+Continue... 🎂
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- ========================= -->
+<!-- BIRTHDAY -->
+<!-- ========================= -->
+
+<section id="birthday" class="screen">
+
+<div class="card fade">
+
+<div style="font-size:70px;">
+🎂🎉❤️
+</div>
+
+<h1>
+Happy Birthday,
+Ruh Albi!
+</h1>
+
+<p>
+Today is your day...
+but I have one little wish.
+</p>
+
+<p>
+I want to be there for your
+happy moments,
+your difficult moments,
+your crazy moments,
+and all the little moments
+in between.
+</p>
+
+<h2>
+And most importantly...
+</h2>
+
+<p>
+I want to spend
+<strong>all your coming birthdays
+with you.</strong>
+</p>
+
+<h1>
+My Birthday Partner. 🎂❤️
+</h1>
+
+<button onclick="finalSurprise()">
+One Last Thing... 💌
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- ========================= -->
+<!-- FINAL -->
+<!-- ========================= -->
+
+<section id="final" class="screen hidden">
+
+<div class="card fade">
+
+<div class="final-heart">
+❤️
+</div>
+
+<h1>
+Ruh Albi...
+</h1>
+
+<p>
+Thank you for coming into my life
+in a way I never expected.
+</p>
+
+<p>
+From being a church friend...
+to my classmate...
+to someone I didn't see for four years...
+</p>
+
+<p>
+and then somehow becoming
+<strong>my person.</strong>
+</p>
+
+<p>
+We've laughed.
+We've fought.
+We've cried.
+We've chosen each other again and again.
+</p>
+
+<h2>
+And I hope we keep choosing us. ❤️
+</h2>
+
+<p>
+You believed in the spark in me
+when I couldn't see it myself.
+</p>
+
+<p>
+So on your birthday,
+I just want you to know...
+</p>
+
+<h1>
+I believe in YOU too. 🥹❤️
+</h1>
+
+<h2>
+Happy Birthday, my Ruh Albi. 💗
+</h2>
+
+<p>
+I want to spend all your coming
+birthdays with you,
+my birthday partner. 🎂❤️
+</p>
+
+<div style="font-size:45px;">
+💋 ❤️ 💋 ❤️ 💋
+</div>
+
+<p class="signature">
+Forever your Ruh Hayathi ❤️
+</p>
+
+<p class="small">
+Made with love, only for you.
+</p>
+
+</div>
+
+</section>
+
+</div>
+
+
+<script>
+
+/* ========================= */
+/* PASSWORD */
+/* ========================= */
+
+function unlock() {
+
+    const password =
+    document.getElementById("password").value;
+
+    if (password === "30042025") {
+
+        document.getElementById("login")
+        .style.display = "none";
+
+        document.getElementById("website")
+        .classList.remove("hidden");
+
+        createHearts();
+
+    } else {
+
+        document.getElementById("error")
+        .innerHTML =
+        "Wrong secret 😝❤️ Try again, Ruh Albi.";
+
+    }
+}
+
+
+/* ========================= */
+/* MOVE TO SECTION */
+/* ========================= */
+
+function go(id) {
+
+    document.getElementById(id)
+    .scrollIntoView({
+        behavior: "smooth"
+    });
+
+}
+
+
+/* ========================= */
+/* KISS ANIMATION */
+/* ========================= */
+
+function kiss() {
+
+    for (let i = 0; i < 12; i++) {
+
+        setTimeout(function() {
+
+            const kiss = document.createElement("div");
+
+            kiss.className = "kiss";
+
+            kiss.innerHTML = "💋";
+
+            kiss.style.left =
+            Math.random() * 90 + "vw";
+
+            kiss.style.bottom =
+            Math.random() * 30 + "vh";
+
+            document.body.appendChild(kiss);
+
+            setTimeout(function() {
+                kiss.remove();
+            }, 2500);
+
+        }, i * 150);
+
+    }
+}
+
+
+/* ========================= */
+/* FLOATING HEARTS */
+/* ========================= */
+
+function createHearts() {
+
+    setInterval(function() {
+
+        const heart =
+        document.createElement("div");
+
+        heart.className = "floating";
+
+        const hearts =
+        ["❤️","💕","💗","💖","💘","🩷"];
+
+        heart.innerHTML =
+        hearts[Math.floor(
+        Math.random() * hearts.length)];
+
+        heart.style.left =
+        Math.random() * 100 + "vw";
+
+        heart.style.fontSize =
+        (18 + Math.random() * 25) + "px";
+
+        heart.style.animationDuration =
+        (4 + Math.random() * 4) + "s";
+
+        document.body.appendChild(heart);
+
+        setTimeout(function() {
+            heart.remove();
+        }, 8000);
+
+    }, 600);
+
+}
+
+
+/* ========================= */
+/* FINAL SURPRISE */
+/* ========================= */
+
+function finalSurprise() {
+
+    document.getElementById("final")
+    .classList.remove("hidden");
+
+    document.getElementById("final")
+    .scrollIntoView({
+        behavior: "smooth"
+    });
+
+    kiss();
+
+    for (let i = 0; i < 30; i++) {
+
+        setTimeout(function() {
+
+            const heart =
+            document.createElement("div");
+
+            heart.className = "floating";
+
+            heart.innerHTML =
+            ["❤️","💗","💖","💋","💕"]
+            [Math.floor(Math.random() * 5)];
+
+            heart.style.left =
+            Math.random() * 100 + "vw";
+
+            document.body.appendChild(heart);
+
+            setTimeout(function() {
+                heart.remove();
+            }, 7000);
+
+        }, i * 100);
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
